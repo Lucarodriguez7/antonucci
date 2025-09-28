@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - Antonucci Autos - Concesionario de Autos de Lujo</title>
+    <meta name="description" content="Explore nuestra exclusiva selección de vehículos de lujo disponibles en Antonucci Autos.">
+   <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="antonucci.png" type="image/x-icon">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+   
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        .hero-title {
+            font-size: clamp(36px, 6.5vw, 96px);
+            letter-spacing: -0.05em;
+        }
+          .btn-primary {
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 28px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    color: #000;
+  }
+        .section-title {
+            font-size: clamp(18px, 2.5vw, 34px);
+        }
+        .body-text {
+            font-size: clamp(14px, 1.6vw, 18px);
+            line-height: 1.6;
+        }
+       
+        
+        .btn-secondary {
+            background: transparent;
+            color: #FFFFFF;
+            padding: 16px 28px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 200ms cubic-bezier(.22,.9,.39,1);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.4);
+        }
+        .card-hover {
+            transition: all 300ms cubic-bezier(.22,.9,.39,1);
+            background: rgba(255,255,255,0.03);
+        }
+        .card-hover:hover {
+            transform: scale(1.03);
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(4px);
+        }
+        .nav-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+  <!-- Header -->
+  <header id="main-header" class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#">
+          <img src="antonucci.png" alt="Antonucci Autos" class="h-10">
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-lg hover:text-gray-400">Inicio</a>
+      <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
+      <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
+     <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+
+        </nav>
+
+        <!-- Botón hamburguesa Mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+<style>
+  /* Animación para ocultar y mostrar el header */
+#main-header {
+  transform: translateY(0);
+  transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+#main-header.hidden {
+  transform: translateY(-100%);
+}
+
+#main-header.scrolled {
+  background: rgba(0,0,0,0.85); /* blur elegante al scrollear */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+</style>
+  <!-- Mobile Sidebar -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-black text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="flex justify-end p-4">
+<button id="close-mobile-menu" class="text-2xl">✕</button>
+    </div>
+    <nav class="flex flex-col items-center space-y-8 mt-10 font-montserrat">
+      <a href="index.html" class="text-lg hover:text-gray-400">Inicio</a>
+      <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
+      <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
+      <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+    </nav>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 flex items-center justify-center bg-black">
+        <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+        <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('inventario.jpg');"></div>
+        <div class="container mx-auto px-6 z-20 text-center">
+            <h1 class="hero-title font-bold" data-aos="fade-up">INVENTARIO</h1>
+        </div>
+    </section>
+
+<section class="py-12 bg-black text-white">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title font-bold mb-10 text-center tracking-wide">NUESTRA COLECCIÓN</h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      
+      <!-- Buscar modelo -->
+      <div class="flex flex-col">
+        <label class="mb-2 text-sm font-semibold tracking-wide text-gray-400">Buscar modelo</label>
+        <input 
+          type="text" 
+          placeholder="Ej: G63 AMG, Panamera, X6..."
+          class="bg-neutral-900 border border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
+        />
+      </div>
+
+    <!-- Filtro: Marcas (nuevo, reemplaza los botones) -->
+<div class="flex flex-col relative z-20">
+  <label class="mb-2 text-sm font-semibold tracking-wide text-gray-400">Marca</label>
+  <div class="bg-neutral-900 rounded-xl border border-gray-700 overflow-hidden">
+    <button 
+  class="w-full flex items-center justify-between px-4 py-3 hover:bg-neutral-800 transition group focus:outline-none focus:ring-0"
+  onclick="toggleMarcas()"
+>
+  <span class="font-medium">Seleccionar marca</span>
+  <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-200 transition transform duration-300" id="arrow-marcas"
+       fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+</button>
+    
+    <!-- Lista con animación -->
+    <div id="marcas-list" 
+         class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out divide-y divide-gray-800 absolute w-full bg-neutral-900 border border-gray-700 rounded-xl mt-1 shadow-xl">
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="volkswagen-10-logo-png-transparent.png" alt="Volkswagen" class="h-6">
+        <span class="text-sm">Volkswagen</span>
+      </label>
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="renault.png" alt="Renault" class="h-6">
+        <span class="text-sm">Renault</span>
+      </label>
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="toyota.png" alt="Toyota" class="h-6">
+        <span class="text-sm">Toyota</span>
+      </label>
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="peugeot.png" alt="Peugeot" class="h-6">
+        <span class="text-sm">Peugeot</span>
+      </label>
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="mblogo.png" alt="Mercedes" class="h-6">
+        <span class="text-sm">Mercedes-Benz</span>
+      </label>
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="bmw.png" alt="BMW" class="h-6">
+        <span class="text-sm">BMW</span>
+      </label>
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="audi.png" alt="Audi" class="h-6">
+        <span class="text-sm">Audi</span>
+      </label>
+      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <img src="jeep.png" alt="Jeep" class="h-6">
+        <span class="text-sm">Jeep</span>
+      </label>
+      <!-- más marcas -->
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMarcas() {
+    const list = document.getElementById('marcas-list');
+    const arrow = document.getElementById('arrow-marcas');
+    if (list.classList.contains('max-h-0')) {
+      list.classList.remove('max-h-0');
+      list.classList.add('max-h-96'); // altura máxima del menú desplegable
+      arrow.classList.add('rotate-180'); // rota la flechita
+    } else {
+      list.classList.add('max-h-0');
+      list.classList.remove('max-h-96');
+      arrow.classList.remove('rotate-180');
+    }
+  }
+</script>
+
+<!-- Rango de kilometraje -->
+<div class="flex flex-col">
+  <label class="mb-2 text-sm font-semibold tracking-wide text-gray-400">Kilometraje</label>
+  
+  <input 
+    type="range" 
+    id="filter-km"
+    min="0" 
+    max="100000" 
+    step="5000"
+    value="100000"
+    class="w-full accent-red-600"
+  />
+
+  <div class="flex justify-between text-xs text-gray-500 mt-2">
+    <span>0 km</span>
+    <span id="km-value">Todos</span>
+    <span>100.000 km+</span>
+  </div>
+</div>
+
+
+  </div>
+<section class="py-20 bg-primary">
+  <div class="container mx-auto px-6">
+    <div id="inventory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Las cards se inyectarán acá con JS -->
+    </div>
+  </div>
+</section>
+
+            <div class="flex justify-center mt-16" data-aos="fade-up">
+               <div id="pagination" class="flex items-center justify-center gap-2 mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title font-bold mb-6" data-aos="fade-up">¿NO ENCUENTRA LO QUE BUSCA?</h2>
+            <p class="body-text max-w-2xl mx-auto mb-8 opacity-90" data-aos="fade-up" data-aos-delay="100">Nuestro equipo de especialistas puede localizar el vehículo exacto que desea, incluso si no está actualmente en nuestro inventario.</p>
+            <a href="index.html#contact" class="btn-primary inline-block" data-aos="fade-up" data-aos-delay="200">Solicitar búsqueda</a>
+        </div>
+    </section>
+
+
+<footer class="bg-black py-14">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      
+      <!-- Logo y descripción -->
+      <div>
+      <img src="antonucci.png" alt="Antonucci Logo" class="h-10 mb-3">
+
+        <p class="text-gray-400 max-w-sm">
+          Concesionario líder en vehículos de lujo, ofreciendo atención personalizada y un servicio premium sin vueltas.
+        </p>
+      </div>
+
+      <!-- Menú -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-semibold text-white mb-4">Menú</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-accent transition">Inicio</a></li>
+            <li><a href="#inventory" class="text-gray-400 hover:text-accent transition">Inventario</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-accent transition">Servicios</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-accent transition">Sobre Nosotros</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-accent transition">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Redes -->
+      <div>
+        <h4 class="font-semibold text-white mb-4">Síganos</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.instagram.com/antonucci.hnos.autos/" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-gray-700 text-white hover:text-accent transition">
+            <i data-feather="instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/Antonuccihnosautos/" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-gray-700 text-white hover:text-accent transition">
+            <i data-feather="facebook"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Antonucci Autos. Todos los derechos reservados.</p>
+      <p class="text-sm text-gray-500">
+        Powered by 
+        <a href="https://entercompany.ar" target="_blank" class="text-accent font-semibold hover:underline">Enter company</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out-cubic',
+    once: true,
+    offset: 100
+  });
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+  // abrir
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden'; // bloquear scroll
+  });
+
+  // cerrar
+  closeMobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    document.body.style.overflow = ''; // restaurar scroll
+  });
+
+  // Feather icons
+  feather.replace();
+</script>
+<script src="https://unpkg.com/feather-icons"></script>
+
+ <!-- WhatsApp Floating Button (Premium - Negro) -->
+<button id="wa-float" 
+        class="wa-btn"
+        aria-label="Chatear por WhatsApp"
+        data-phone="+5492235442198">
+  <!-- SVG WhatsApp icon -->
+  <span class="wa-icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M20.52 3.48A11.87 11.87 0 0012 0C5.373 0 .01 5.363.01 12c0 2.116.553 4.18 1.6 6.01L0 24l6.32-1.64A11.87 11.87 0 0012 24c6.627 0 12-5.373 12-12 0-1.95-.43-3.8-1.48-5.52zM12 21.5c-1.13 0-2.24-.2-3.28-.6l-.24-.1-3.75.98.99-3.66-.14-.25A9.74 9.74 0 012.5 12 9.5 9.5 0 1112 21.5zM17.4 15.1c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.78.98-.95 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.78-1.51-1.75-1.69-2.05-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.48.1-.2.05-.36-.02-.5-.08-.14-.66-1.6-.9-2.2-.24-.58-.49-.5-.68-.51-.17-.01-.37-.01-.57-.01-.2 0-.45.06-.7.3-.25.24-.96.94-.96 2.3 0 1.36 1.04 2.7 1.19 2.94.15.24 2.07 3.2 5.02 4.74.7.3 1.26.46 1.72.6.72.22 1.38.19 1.9.12.58-.09 1.78-.66 2.06-1.34.28-.68.28-1.27.2-1.4-.08-.13-.32-.2-.62-.35z"/>
+    </svg>
+  </span>
+  <span class="wa-text">WhatsApp</span>
+</button>
+
+<style>
+  .wa-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, rgba(20,20,20,0.98), rgba(6,6,6,0.98));
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    cursor: pointer;
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    min-width: 64px;
+  }
+  .wa-icon {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:36px;
+    height:36px;
+    border-radius:9999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    color: #25D366;
+  }
+  .wa-text {
+    font-weight:600;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-size: 15px;
+    color: #EFEFEF;
+  }
+  .wa-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.65), 0 0 24px rgba(37,211,102,0.06);
+    border-color: rgba(37,211,102,0.18);
+  }
+  .wa-btn:active { transform: translateY(-2px); }
+  @media (max-width: 640px) {
+    .wa-btn { right: 14px; bottom: 14px; padding: 12px 14px; }
+    .wa-icon { width:32px; height:32px; }
+    .wa-text { display:none; }
+  }
+</style>
+<script>
+  // --- WhatsApp flotante ---
+  (function() {
+    const btn = document.getElementById('wa-float');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const phone = btn.getAttribute('data-phone') || '+5492235442198';
+      const cleanPhone = phone.replace(/\s+/g, '').replace('+','');
+      const url = `https://wa.me/${cleanPhone}`;
+      window.open(url, '_blank');
+    });
+  })();
+
+  // --- Inventario + filtros + paginación ---
+  let allCars = [];
+  let currentPage = 1;
+  const carsPerPage = 12;
+
+  async function loadInventory() {
+    try {
+      const res = await fetch("inventory.json");
+      allCars = await res.json();
+
+      // si tu JSON no trae brand, lo sacamos del título
+      allCars = allCars.map(car => ({
+        ...car,
+        brand: car.brand || car.title.split(" ")[0]
+      }));
+
+      applyFilters();
+    } catch (err) {
+      console.error("Error cargando inventario:", err);
+    }
+  }
+
+  function renderCars(cars) {
+    const grid = document.querySelector("#inventory-grid");
+    grid.innerHTML = "";
+
+    if (cars.length === 0) {
+      grid.innerHTML = `<p class="text-gray-400">No se encontraron resultados</p>`;
+      return;
+    }
+
+    const start = (currentPage - 1) * carsPerPage;
+    const end = start + carsPerPage;
+    const paginatedCars = cars.slice(start, end);
+
+    paginatedCars.forEach((car, index) => {
+      const card = document.createElement("div");
+      card.className = "card-hover rounded-lg overflow-hidden relative shadow-lg";
+      card.setAttribute("data-aos", "fade-up");
+      card.setAttribute("data-aos-delay", index * 100);
+
+      card.innerHTML = `
+        <div class="relative h-64 overflow-hidden">
+          <img src="${car.image}" alt="${car.title}" class="w-full h-full object-cover">
+
+          <!-- Gradiente lateral premium -->
+         <!-- Gradiente lateral premium (más intenso) -->
+<!-- Gradiente lateral más intenso -->
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-black/80 pointer-events-none"></div>
+
+
+
+          <!-- Logo Antonucci fijo -->
+          <img src="antonucci.png" alt="Antonucci Logo"
+               class="absolute top-3 left-3 h-8 opacity-90 drop-shadow-lg">
+
+          ${car.badge ? `<div class="absolute top-4 right-4 bg-black bg-opacity-70 px-3 py-1 rounded-full text-sm">${car.badge}</div>` : ""}
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="font-bold">${car.title}</h3>
+            <p class="text-sm opacity-80">${car.year} • ${car.km}</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex space-x-2 mb-4">
+            ${car.tags.map(tag => `<span class="bg-tertiary px-2 py-1 rounded text-xs">${tag}</span>`).join("")}
+          </div>
+          ${car.price ? `<span class="font-bold text-xl block mb-2">${car.price}</span>` : ""}
+          <a href="${car.link}" class="btn-secondary w-full text-center block">Ver detalles</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    AOS.refresh(); // refrescar animaciones
+    renderPagination(cars.length);
+  }
+
+  function renderPagination(totalCars) {
+    const container = document.querySelector("#pagination");
+    container.innerHTML = "";
+
+    const totalPages = Math.ceil(totalCars / carsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.className = `px-4 py-2 border border-gray-700 rounded-lg ${i === currentPage ? "bg-secondary" : "hover:bg-secondary"}`;
+      btn.addEventListener("click", () => {
+        currentPage = i;
+        applyFilters();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      container.appendChild(btn);
+    }
+  }
+
+  function applyFilters() {
+    const searchInput = document.querySelector('input[placeholder^="Ej:"]').value.toLowerCase();
+
+    const marcaCheckboxes = document.querySelectorAll('#marcas-list input[type="checkbox"]:checked');
+    const selectedBrands = Array.from(marcaCheckboxes).map(cb => cb.nextElementSibling.alt);
+
+    const kmValue = parseInt(document.getElementById("filter-km").value);
+
+    let filtered = allCars.filter(car => {
+      const matchesSearch = car.title.toLowerCase().includes(searchInput);
+      const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(car.brand);
+      const kmNumber = parseInt(car.km.replace(/[^0-9]/g, "")) || 0;
+      const matchesKm = kmNumber <= kmValue;
+
+      return matchesSearch && matchesBrand && matchesKm;
+    });
+
+    renderCars(filtered);
+  }
+
+  // --- Dropdown marcas ---
+  function toggleMarcas(forceClose = false) {
+    const list = document.getElementById('marcas-list');
+    const arrow = document.getElementById('arrow-marcas');
+
+    if (forceClose || list.classList.contains('max-h-96')) {
+      list.classList.add('max-h-0');
+      list.classList.remove('max-h-96');
+      arrow.classList.remove('rotate-180');
+    } else {
+      list.classList.remove('max-h-0');
+      list.classList.add('max-h-96');
+      arrow.classList.add('rotate-180');
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadInventory();
+
+    // búsqueda
+    document.querySelector('input[placeholder^="Ej:"]').addEventListener("input", () => {
+      currentPage = 1;
+      applyFilters();
+    });
+
+    const kmInput = document.getElementById("filter-km");
+    const kmValue = document.getElementById("km-value");
+
+    kmInput.addEventListener("input", () => {
+      currentPage = 1;
+
+      // Texto dinámico
+      if (kmInput.value == kmInput.max) {
+        kmValue.textContent = "Todos";
+      } else {
+        kmValue.textContent = `≤ ${parseInt(kmInput.value).toLocaleString()} km`;
+      }
+
+      applyFilters();
+    });
+
+    // marcas
+    const marcaCheckboxes = document.querySelectorAll('#marcas-list input[type="checkbox"]');
+    const marcaButtonText = document.querySelector('#marcas-list').previousElementSibling.querySelector('span.font-medium');
+
+    marcaCheckboxes.forEach(cb => {
+      cb.addEventListener("change", () => {
+        const selectedBrands = Array.from(marcaCheckboxes)
+          .filter(c => c.checked)
+          .map(c => c.nextElementSibling.alt);
+
+        if (selectedBrands.length === 0) {
+          marcaButtonText.textContent = "Seleccionar marca";
+        } else if (selectedBrands.length === 1) {
+          marcaButtonText.textContent = selectedBrands[0];
+        } else if (selectedBrands.length <= 3) {
+          marcaButtonText.textContent = selectedBrands.join(", ");
+        } else {
+          marcaButtonText.textContent = `${selectedBrands.length} seleccionadas`;
+        }
+
+        toggleMarcas(true);
+        currentPage = 1;
+        applyFilters();
+      });
+    });
+  });
+</script>
+<script>
+  let lastScroll = 0;
+  const header = document.getElementById("main-header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      header.classList.remove("hidden");
+      header.classList.remove("scrolled");
+      return;
+    }
+
+    // agrega blur y fondo al scrollear
+    header.classList.add("scrolled");
+
+    if (currentScroll > lastScroll && !header.classList.contains("hidden")) {
+      // scrollea hacia abajo → ocultar
+      header.classList.add("hidden");
+    } else if (currentScroll < lastScroll && header.classList.contains("hidden")) {
+      // scrollea hacia arriba → mostrar
+      header.classList.remove("hidden");
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+
+</body>
+</html>

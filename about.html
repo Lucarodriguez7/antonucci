@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Antonucci Autos - Concesionario Premium</title>
+  <meta name="description" content="Concesionario de lujo con 5 años de experiencia, ofreciendo atención personalizada y excelencia en el mundo automotor.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="antonucci.png" type="image/x-icon">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; }
+    .hero-title { font-size: clamp(40px, 6vw, 90px); letter-spacing: -0.03em; }
+    .section-title { font-size: clamp(22px, 3vw, 38px); }
+    .body-text { font-size: clamp(15px, 1.4vw, 18px); line-height: 1.7; }
+    .btn-primary {
+      padding: 12px 28px;
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover { background: #fff; color: #000; }
+  </style>
+</head>
+<body class="antialiased">
+  
+  <!-- Header -->
+  <header id="main-header" class="fixed w-full z-50 transition-all duration-300 bg-black/70 backdrop-blur-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#"><img src="antonucci.png" alt="Antonucci Autos" class="h-10"></a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="hover:text-gray-400">Inicio</a>
+        <a href="inventory.html" class="hover:text-gray-400">Inventario</a>
+        <a href="about.html" class="hover:text-gray-400">Sobre Nosotros</a>
+        <a href="consignacion.html" class="btn-primary">Vender mi auto</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white"><i data-feather="menu"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-black text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="flex justify-end p-4"><button id="menu-close">✕</button></div>
+    <nav class="flex flex-col items-center space-y-6 mt-10">
+      <a href="index.html">Inicio</a>
+      <a href="inventory.html">Inventario</a>
+      <a href="about.html">Sobre Nosotros</a>
+      <a href="consignacion.html" class="btn-primary">Vender mi auto</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative h-[70vh] flex items-center justify-center text-center">
+    <div class="absolute inset-0 bg-black/70 z-10"></div>
+    <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1920&q=80" 
+         class="absolute inset-0 w-full h-full object-cover z-0">
+    <div class="z-20 px-6">
+      <h1 class="hero-title font-bold" data-aos="fade-up">SOBRE NOSOTROS</h1>
+      <p class="mt-6 max-w-2xl mx-auto text-lg opacity-90" data-aos="fade-up" data-aos-delay="150">
+        Con apenas 5 años en el mercado, Antonucci Autos se ha convertido en sinónimo de excelencia, confianza y servicio premium.
+      </p>
+    </div>
+  </section>
+
+  <!-- Historia -->
+  <section class="py-20 bg-neutral-900">
+    <div class="container mx-auto px-6 text-center max-w-4xl">
+      <h2 class="section-title font-bold mb-6" data-aos="fade-up">NUESTRA HISTORIA</h2>
+      <p class="body-text opacity-90" data-aos="fade-up" data-aos-delay="100">
+        Fundada en 2020, Antonucci Autos nació con una visión clara: redefinir el concepto de concesionario de lujo.  
+        Apostamos por una atención personalizada, vehículos seleccionados con rigurosidad y un compromiso absoluto con la transparencia.  
+        En pocos años, nos consolidamos como un referente en el mercado premium argentino.
+      </p>
+    </div>
+  </section>
+
+  <!-- Valores -->
+  <section class="py-20 bg-black">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title font-bold mb-12 text-center" data-aos="fade-up">NUESTROS VALORES</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="p-8 border border-gray-800 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+          <i data-feather="award" class="mx-auto mb-4 w-12 h-12 text-green-500"></i>
+          <h3 class="font-semibold text-xl mb-2">Excelencia</h3>
+          <p class="text-gray-400">Cuidamos cada detalle, desde la elección del auto hasta la entrega final.</p>
+        </div>
+        <div class="p-8 border border-gray-800 rounded-xl text-center" data-aos="fade-up" data-aos-delay="200">
+          <i data-feather="heart" class="mx-auto mb-4 w-12 h-12 text-green-500"></i>
+          <h3 class="font-semibold text-xl mb-2">Pasión</h3>
+          <p class="text-gray-400">Vivimos el mundo automotor con entusiasmo y dedicación.</p>
+        </div>
+        <div class="p-8 border border-gray-800 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
+          <i data-feather="shield" class="mx-auto mb-4 w-12 h-12 text-green-500"></i>
+          <h3 class="font-semibold text-xl mb-2">Transparencia</h3>
+          <p class="text-gray-400">Honestidad absoluta en el historial de cada vehículo.</p>
+        </div>
+        <div class="p-8 border border-gray-800 rounded-xl text-center" data-aos="fade-up" data-aos-delay="400">
+          <i data-feather="users" class="mx-auto mb-4 w-12 h-12 text-green-500"></i>
+          <h3 class="font-semibold text-xl mb-2">Compromiso</h3>
+          <p class="text-gray-400">Relaciones duraderas con clientes que confían en nosotros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section class="py-20 bg-neutral-900">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title font-bold mb-16 text-center" data-aos="fade-up">NUESTRO EQUIPO</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover">
+          <h3 class="font-bold text-xl">Giovanni Antonucci</h3>
+          <p class="text-green-500 mb-3">Fundador & CEO</p>
+          <p class="text-gray-400">Visionario que impulsó el concepto de excelencia en cada paso del negocio.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover">
+          <h3 class="font-bold text-xl">Martina Rinaldi</h3>
+          <p class="text-green-500 mb-3">Directora de Ventas</p>
+          <p class="text-gray-400">Especialista en clientes exigentes que buscan experiencias únicas.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover">
+          <h3 class="font-bold text-xl">Luciano Bianchi</h3>
+          <p class="text-green-500 mb-3">Jefe de Servicio Técnico</p>
+          <p class="text-gray-400">Ingeniero experto en marcas de alta gama europeas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-black text-center">
+    <h2 class="section-title font-bold mb-6" data-aos="fade-up">¿LISTO PARA CONOCER EL ESTILO ANTONUCCI?</h2>
+    <p class="body-text opacity-90 max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+      Reserve su cita privada en nuestro showroom y descubra por qué somos un referente en autos de lujo.
+    </p>
+    <a href="index.html#contact" class="btn-primary" data-aos="fade-up" data-aos-delay="200">Agendar cita</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-950 py-14">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      <div>
+        <img src="antonucci.png" alt="Antonucci Logo" class="h-10 mb-4">
+        <p class="text-gray-400 max-w-xs">Concesionario líder en autos de lujo con atención premium y confianza garantizada.</p>
+      </div>
+      <div class="flex space-x-4">
+        <a href="https://www.instagram.com/antonucci.hnos.autos/" class="p-3 bg-neutral-800 rounded-full hover:bg-green-600 transition">
+          <i data-feather="instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/Antonuccihnosautos/" class="p-3 bg-neutral-800 rounded-full hover:bg-green-600 transition">
+          <i data-feather="facebook"></i>
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-neutral-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+      © 2025 Antonucci Autos. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    // AOS
+    AOS.init({ duration: 800, once: true, offset: 100 });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+    });
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+    });
+
+    // Feather icons
+    feather.replace();
+  </script>
+</body>
+</html>

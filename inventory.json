@@ -1,0 +1,244 @@
+[
+
+{
+  "title": "Volkswagen TERA",
+  "year": 2025,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "tera.png",
+  "price": null,
+  "badge": null,
+  "tags": ["SUV", "Automática", "1.5 TSI", "150 HP"],
+  "link": "tera.html"
+}
+,
+  {
+  "title": "Volkswagen Nivus Trendline AT",
+  "year": 2023,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "nivusgrid.jpg",
+  "price": null,
+  "badge": null,
+  "tags": ["SUV", "Automático", "1.0 TSI"],
+  "link": "nivus.html"
+}
+,
+ {
+  "title": "Volkswagen T-Cross Trendline AT",
+  "year": 2025,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "tcross.jpg",
+  "price": null,
+  "badge": null,
+  "tags": ["SUV", "Automático", "1.0 TSI"],
+  "link": "tcross.html"
+}
+,
+  {
+  "title": "Volkswagen Polo Confortline AT",
+  "year": 2025,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "pologrid.jpeg",
+  "price": null,
+  "badge": null,
+  "tags": ["Sedán", "Automático"],
+  "link": "polo.html"
+}
+,
+{
+  "title": "Volkswagen Tera Trend MT",
+  "year": 2025,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "teragridd.jpg",
+  "price": null,
+  "badge": null,
+  "tags": ["SUV", "Manual"],
+  "link": "teratrend.html"
+},
+  
+ {
+  "title": "Volkswagen Amarok Trendline 4x2",
+  "year": 2025,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "amarokgrid.jpg",
+  "price": null,
+  "badge": "",
+  "tags": ["Pickup", "Manual"],
+  "link": "amaroktrendline.html"
+},
+ {  
+  "title": "Volkswagen Amarok Trendline AT",  
+  "year": 2024,  
+  "km": "0 km",  
+  "brand": "Volkswagen",  
+  "image": "amarokgrid1.jpg",  
+  "price": null,  
+  "badge": null,  
+  "tags": ["Pickup", "Automática"],  
+  "link": "amarokat.html"  
+}
+,
+ {
+  "title": "Volkswagen Amarok Trendline MT",
+  "year": 2024,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "vwat.jpg",
+  "price": null,
+  "badge": null,
+  "tags": ["Pickup", "Manual"],
+  "link": "amarokmt.html"
+}
+,
+  {
+  "title": "Volkswagen Taos",
+  "year": 2024,
+  "km": "0 km",
+  "brand": "Volkswagen",
+  "image": "taosgrid.jpg",
+  "price": null,
+  "badge": null,
+  "tags": ["SUV", "Automática"],
+  "link": "taos.html"
+}
+,
+  {
+    "title": "BMW X6",
+    "year": 2021,
+    "km": "20,000 km",
+    "brand": "BMW",
+    "image": "https://via.placeholder.com/400x250?text=BMW+X6",
+    "price": "$80,000",
+    "badge": "Premium",
+    "tags": ["SUV", "Automático"],
+    "link": "#"
+  },
+  {
+    "title": "Audi A4",
+    "year": 2020,
+    "km": "35,000 km",
+    "brand": "Audi",
+    "image": "https://via.placeholder.com/400x250?text=Audi+A4",
+    "price": "$50,000",
+    "badge": "Oferta",
+    "tags": ["Sedán", "Manual"],
+    "link": "#"
+  },
+  {
+    "title": "Mercedes GLE",
+    "year": 2022,
+    "km": "10,000 km",
+    "brand": "Mercedes-Benz",
+    "image": "https://via.placeholder.com/400x250?text=Mercedes+GLE",
+    "price": "$95,000",
+    "badge": "",
+    "tags": ["SUV", "Automático"],
+    "link": "#"
+  },
+   {
+    "title": "Volkswagen Amarok V6 Extreme 258HP",
+    "brand": "Volkswagen",
+    "year": 2025,
+    "km": "0 km",
+    "image": "amarok.jpg",
+    "badge": null,
+    "tags": ["Automática", "3.0L V6 TDI"],
+    "price": null,
+    "link": "amarok.html"
+  },
+  {
+    "title": "Jeep Compass Limited 4x4",
+    "brand": "Jeep",
+    "year": 2021,
+    "km": "20,000 km",
+    "image": "jeepinventory.jpg",
+    "badge": null,
+    "tags": ["2.4L", "Automática 9V", "4x4"],
+    "price": null,
+    "link": "compass.html"
+  },
+  {
+    "title": "Ford Ranger Raptor",
+    "brand": "Ford",
+    "year": 2022,
+    "km": "29,000 km",
+    "image": "fordraptor.jpg",
+    "badge": null,
+"tags": ["Automática", "2.0 Bi-Turbo", "4x4", "213 CV"],
+    "price": null,
+    "link": "raptor.html"
+  }
+  ,
+  {
+    "title": "BMW X6",
+    "year": 2021,
+    "km": "20,000 km",
+    "brand": "BMW",
+    "image": "https://via.placeholder.com/400x250?text=BMW+X6",
+    "price": "$80,000",
+    "badge": "Premium",
+    "tags": ["SUV", "Automático"],
+    "link": "#"
+  },
+  {
+    "title": "Audi A4",
+    "year": 2020,
+    "km": "35,000 km",
+    "brand": "Audi",
+    "image": "https://via.placeholder.com/400x250?text=Audi+A4",
+    "price": "$50,000",
+    "badge": "Oferta",
+    "tags": ["Sedán", "Manual"],
+    "link": "#"
+  },
+  {
+    "title": "Mercedes GLE",
+    "year": 2022,
+    "km": "10,000 km",
+    "brand": "Mercedes-Benz",
+    "image": "https://via.placeholder.com/400x250?text=Mercedes+GLE",
+    "price": "$95,000",
+    "badge": "",
+    "tags": ["SUV", "Automático"],
+    "link": "#"
+  },
+  {
+    "title": "BMW X6",
+    "year": 2021,
+    "km": "20,000 km",
+    "brand": "BMW",
+    "image": "https://via.placeholder.com/400x250?text=BMW+X6",
+    "price": "$80,000",
+    "badge": "Premium",
+    "tags": ["SUV", "Automático"],
+    "link": "#"
+  },
+  {
+    "title": "Audi A4",
+    "year": 2020,
+    "km": "35,000 km",
+    "brand": "Audi",
+    "image": "https://via.placeholder.com/400x250?text=Audi+A4",
+    "price": "$50,000",
+    "badge": "Oferta",
+    "tags": ["Sedán", "Manual"],
+    "link": "#"
+  },
+  {
+    "title": "Mercedes GLE",
+    "year": 2022,
+    "km": "10,000 km",
+    "brand": "Mercedes-Benz",
+    "image": "https://via.placeholder.com/400x250?text=Mercedes+GLE",
+    "price": "$95,000",
+    "badge": "",
+    "tags": ["SUV", "Automático"],
+    "link": "#"
+  }
+]
+

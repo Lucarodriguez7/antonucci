@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consignación de Vehículos - Antonucci hermanos Autos</title>
+    <meta name="description" content="Vende tu auto de forma rápida y segura con Antonucci Hermanos Autos. Expertos en consignación sin costos adicionales y amplia red de difusión.">
+    <meta property="og:image" content="http://static.photos/black/1200x630/1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="antonucci.png" type="image/x-icon">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#1B1B1B',
+                        tertiary: '#2E2E2E',
+                        accent: '#BFBFBF',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 7vw, 5rem); /* Responsive font size */
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            letter-spacing: -2px;
+            background: linear-gradient(180deg, #fff, #ddd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            filter: blur(8px);
+            animation: smoothFocus 2.5s ease forwards;
+        }
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Responsive font size */
+            font-weight: 700;
+            color: #ddd;
+            text-align: center;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 3s ease forwards 1s; /* appears after title */
+        }
+        @keyframes smoothFocus {
+            0% { opacity: 0; filter: blur(8px); }
+            100% { opacity: 1; filter: blur(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .btn-primary {
+            font-family: 'Montserrat', sans-serif;
+            padding: 12px 28px;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #fff;
+            color: #000;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem); /* Responsive font size */
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .body-text {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            line-height: 1.6;
+            color: #bbb;
+        }
+        .card-hover {
+            transition: all 300ms cubic-bezier(.22,.9,.39,1);
+            background: rgba(255,255,255,0.03);
+        }
+        .card-hover:hover {
+            transform: scale(1.03);
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(4px);
+        }
+        .nav-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            [data-aos] { opacity: 1 !important; transform: none !important; }
+        }
+
+        /* Custom styles for consignment section */
+        .feature-icon {
+            color: #BFBFBF; /* Accent color */
+            width: 48px;
+            height: 48px;
+        }
+        .social-grid img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .social-grid img:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+  <!-- Header -->
+  <header id="main-header" class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html">
+          <img src="antonucci.png" alt="Antonucci Autos" class="h-10">
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-lg hover:text-gray-400">Inicio</a>
+            <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
+            <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
+            <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+        </nav>
+
+        <!-- Botón hamburguesa Mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-black text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="flex justify-end p-4">
+      <button id="menu-close" class="text-2xl">✕</button>
+    </div>
+    <nav class="flex flex-col items-center space-y-8 mt-10 font-montserrat">
+        <a href="index.html" class="text-lg hover:text-gray-400">Inicio</a>
+        <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
+        <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
+        <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+    </nav>
+  </div>
+
+
+  <!-- Hero Section - Consignación -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+  <div class="parallax-bg absolute inset-0 z-0" style="background-image: url('https://images.unsplash.com/photo-1549495393-80a221f7e346?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+  
+  <div class="container mx-auto px-6 z-20 text-center">
+    <h1 class="hero-title font-bold mb-4">¿QUERÉS VENDER TU AUTO?</h1>
+    <h2 class="hero-subtitle max-w-2xl mx-auto">Nosotros lo hacemos por vos.</h2>
+    <div class="mt-10" data-aos="fade-up" data-aos-delay="1200">
+      <a href="#how-it-works" class="btn-primary inline-block">Descubrí cómo</a>
+    </div>
+  </div>
+</section>
+ 
+
+  <!-- Section: Cómo Funciona -->
+<section id="how-it-works" class="py-24 bg-black">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title text-center text-white mb-16" data-aos="fade-up">
+      ASÍ FUNCIONA NUESTRA CONSIGNACIÓN PREMIUM
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+
+      <!-- Paso 1 -->
+      <div class="text-center group card-hover p-8 rounded-xl border border-white/10" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-4 rounded-full inline-flex mb-6 transition-all duration-300 group-hover:from-accent group-hover:to-gray-800">
+          <i data-feather="file-text" class="feature-icon text-white group-hover:text-black"></i>
+        </div>
+        <h3 class="font-montserrat font-bold text-xl text-white mb-3">1. Tasación y Acuerdos</h3>
+        <p class="body-text text-gray-400">
+          Evaluamos tu vehículo para ofrecerte el mejor valor de mercado y firmamos un acuerdo de consignación claro y transparente.
+        </p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="text-center group card-hover p-8 rounded-xl border border-white/10" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-4 rounded-full inline-flex mb-6 transition-all duration-300 group-hover:from-accent group-hover:to-gray-800">
+          <i data-feather="camera" class="feature-icon text-white group-hover:text-black"></i>
+        </div>
+        <h3 class="font-montserrat font-bold text-xl text-white mb-3">2. Preparación y Marketing</h3>
+        <p class="body-text text-gray-400">
+          Preparamos tu auto profesionalmente y creamos un anuncio de alta calidad para destacar sus mejores atributos.
+        </p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="text-center group card-hover p-8 rounded-xl border border-white/10" data-aos="fade-up" data-aos-delay="300">
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-4 rounded-full inline-flex mb-6 transition-all duration-300 group-hover:from-accent group-hover:to-gray-800">
+          <i data-feather="share-2" class="feature-icon text-white group-hover:text-black"></i>
+        </div>
+        <h3 class="font-montserrat font-bold text-xl text-white mb-3">3. Amplia Difusión</h3>
+        <p class="body-text text-gray-400">
+          Publicamos tu auto en nuestra extensa red de canales premium y redes sociales para llegar a miles de compradores.
+        </p>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="text-center group card-hover p-8 rounded-xl border border-white/10" data-aos="fade-up" data-aos-delay="400">
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-4 rounded-full inline-flex mb-6 transition-all duration-300 group-hover:from-accent group-hover:to-gray-800">
+          <i data-feather="credit-card" class="feature-icon text-white group-hover:text-black"></i>
+        </div>
+        <h3 class="font-montserrat font-bold text-xl text-white mb-3">4. Gestión de Venta</h3>
+        <p class="body-text text-gray-400">
+          Nos encargamos de todo el proceso de venta, desde las consultas hasta la negociación y el papeleo.
+        </p>
+      </div>
+      
+      <!-- Paso 5 -->
+      <div class="text-center group card-hover p-8 rounded-xl border border-white/10" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-4 rounded-full inline-flex mb-6 transition-all duration-300 group-hover:from-accent group-hover:to-gray-800">
+          <i data-feather="dollar-sign" class="feature-icon text-white group-hover:text-black"></i>
+        </div>
+        <h3 class="font-montserrat font-bold text-xl text-white mb-3">5. Cobro Rápido</h3>
+        <p class="body-text text-gray-400">
+          Una vez vendido, te garantizamos un cobro rápido y seguro. ¡Tu dinero en tus manos sin demoras!
+        </p>
+      </div>
+
+      <!-- Paso 6 (Nuevo) -->
+      <div class="text-center group card-hover p-8 rounded-xl border border-white/10" data-aos="fade-up" data-aos-delay="600">
+        <div class="bg-gradient-to-br from-neutral-800 to-black p-4 rounded-full inline-flex mb-6 transition-all duration-300 group-hover:from-accent group-hover:to-gray-800">
+          <i data-feather="zap" class="feature-icon text-white group-hover:text-black"></i>
+        </div>
+        <h3 class="font-montserrat font-bold text-xl text-white mb-3">6. Sin Costos Adicionales</h3>
+        <p class="body-text text-gray-400">
+          Nuestro servicio de consignación es completamente transparente. ¡Solo pagas cuando tu auto se vende!
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section: Redes de Publicación -->
+<section class="py-24 bg-">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="section-title text-white mb-6" data-aos="fade-up">
+      TU AUTO, EN LAS MEJORES MANOS Y EN TODAS PARTES
+    </h2>
+    <p class="body-text max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
+      Contamos con una amplia variedad de redes donde publicamos tu auto para que sea vendido en tiempo récord,
+      llegando a miles de potenciales compradores de alta calidad.
+    </p>
+
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-12 max-w-5xl mx-auto place-items-center">
+  <!-- acá van tus íconos -->
+<!-- Instagram -->
+<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="150">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+       alt="Instagram" 
+       class="w-24 h-24 object-contain filter grayscale hover:grayscale-0 transform hover:scale-110 transition duration-300 ease-in-out">
+  <p class="text-white text-sm mt-2">Instagram</p>
+</div>
+
+<!-- Facebook -->
+<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+  <img src="fb.png" alt="Facebook" 
+       class="w-24 h-24 object-contain filter grayscale hover:grayscale-0 rounded-md transform hover:scale-110 transition duration-300 ease-in-out">
+  <p class="text-white text-sm mt-2">Facebook</p>
+</div>
+
+<!-- Twitter (pajarito azul) -->
+<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="250">
+  <img src="tw.png" 
+       alt="Twitter" 
+       class="w-24 h-24 object-contain filter grayscale hover:grayscale-0 transform hover:scale-110 transition duration-300 ease-in-out">
+  <p class="text-white text-sm mt-2">Twitter</p>
+</div>
+
+<!-- Mercado Libre -->
+<div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+  <img src="ml.png" alt="Mercado Libre" 
+       class="w-24 h-24 object-contain filter grayscale hover:grayscale-0 rounded-md transform hover:scale-110 transition duration-300 ease-in-out">
+  <p class="text-white text-sm mt-2">Mercado Libre</p>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section: Beneficios adicionales (rediseñada) -->
+<section class="py-32 bg-black relative overflow-hidden">
+  <!-- Título -->
+  <div class="text-center mb-20 px-6">
+    <h2 class="text-4xl md:text-5xl font-oswald font-bold text-white" data-aos="fade-up">
+      BENEFICIOS DE <span class="text-accent">CONSIGNAR</span> CON NOSOTROS
+    </h2>
+    <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Tu tranquilidad es nuestra prioridad. Transformamos la venta de tu vehículo en una experiencia premium.
+    </p>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto px-6">
+    
+    <!-- Card 1 -->
+    <div class="relative group rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="150">
+      <img src="seguridad.jpg" alt="Seguridad" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      <div class="absolute bottom-0 p-8">
+        <h3 class="text-2xl font-bold text-white mb-2">Seguridad & Confianza</h3>
+        <p class="text-gray-300">Proceso 100% transparente y protegido. Olvidate de riesgos innecesarios.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="relative group rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="250">
+      <img src="venta.jpg" alt="Precio máximo" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      <div class="absolute bottom-0 p-8">
+        <h3 class="text-2xl font-bold text-white mb-2">Mejor Valor de Venta</h3>
+        <p class="text-gray-300">Difusión premium y estrategia para maximizar el precio de tu vehículo.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="relative group rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="350">
+      <img src="time.jpeg" alt="Ahorro de tiempo" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      <div class="absolute bottom-0 p-8">
+        <h3 class="text-2xl font-bold text-white mb-2">Ahorro de Tiempo</h3>
+        <p class="text-gray-300">Nos ocupamos de fotos, publicaciones y llamadas: vos solo esperás resultados.</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="relative group rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="450">
+      <img src="atencion.jpg" alt="Servicio Premium" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      <div class="absolute bottom-0 p-8">
+        <h3 class="text-2xl font-bold text-white mb-2">Atención Premium</h3>
+        <p class="text-gray-300">Asesoramiento personalizado y seguimiento exclusivo en cada etapa.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Call to Action Section -->
+<section class="py-24 bg text-center">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title text-white mb-6" data-aos="fade-up">
+      ¡ES HORA DE VENDER TU AUTO!
+    </h2>
+    <p class="body-text max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+      Contactanos hoy mismo y dejá que los expertos de Antonucci Hermanos Autos se encarguen de todo.
+      Vender tu vehículo nunca fue tan fácil y seguro.
+    </p>
+    <a href="#contact-form" class="btn-primary inline-block px-8 py-4 text-xl" data-aos="fade-up" data-aos-delay="200">
+      Quiero Consignar mi Auto
+    </a>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact-form" class="py-24 bg-black">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title text-center text-white mb-16" data-aos="fade-up">
+      COMPLETA EL FORMULARIO
+    </h2>
+
+    <div class="max-w-3xl mx-auto bg-neutral-900/60 backdrop-blur-md p-8 md:p-12 rounded-2xl shadow-lg border border-white/10" data-aos="fade-up" data-aos-delay="100">
+      <form id="whatsapp-form" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Nombre y Apellido</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-neutral-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent" placeholder="Tu Nombre" required>
+          </div>
+          <div>
+            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-neutral-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent" placeholder="tu@email.com" required>
+          </div>
+        </div>
+        <div>
+          <label for="phone" class="block text-gray-300 text-sm font-bold mb-2">Teléfono</label>
+          <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-neutral-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent" placeholder="+54 9..." required>
+        </div>
+        <div>
+          <label for="car-make" class="block text-gray-300 text-sm font-bold mb-2">Marca de tu auto</label>
+          <input type="text" id="car-make" name="car-make" class="w-full px-4 py-3 bg-neutral-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent" placeholder="Ej: Volkswagen" required>
+        </div>
+        <div>
+          <label for="car-model" class="block text-gray-300 text-sm font-bold mb-2">Modelo de tu auto</label>
+          <input type="text" id="car-model" name="car-model" class="w-full px-4 py-3 bg-neutral-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent" placeholder="Ej: Amarok V6" required>
+        </div>
+        <div>
+          <label for="car-year" class="block text-gray-300 text-sm font-bold mb-2">Año</label>
+          <input type="number" id="car-year" name="car-year" class="w-full px-4 py-3 bg-neutral-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent" placeholder="Ej: 2020" min="1900" max="2099" required>
+        </div>
+        <div>
+          <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Comentarios Adicionales</label>
+          <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-neutral-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent" placeholder="Detalles extra sobre tu auto o tus necesidades..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full py-3 text-lg">Enviar Solicitud</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById("whatsapp-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const phoneNumber = "5492235442198"; // 📌 tu número de WhatsApp
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const carMake = document.getElementById("car-make").value;
+    const carModel = document.getElementById("car-model").value;
+    const carYear = document.getElementById("car-year").value;
+    const message = document.getElementById("message").value;
+
+    const text = `Hola, quiero consignar mi auto.%0A
+👤 Nombre: ${name}%0A
+📧 Email: ${email}%0A
+📱 Teléfono: ${phone}%0A
+🚗 Marca: ${carMake}%0A
+🚙 Modelo: ${carModel}%0A
+📅 Año: ${carYear}%0A
+📝 Comentarios: ${message}`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${text}`;
+    window.open(url, "_blank");
+  });
+</script>
+
+
+<!-- Footer -->
+<footer class="bg-black py-14">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      
+      <!-- Logo y descripción -->
+      <div>
+        <h3 class="text-2xl font-bold text-white mb-3">ANTONUCCI</h3>
+        <p class="text-gray-400 max-w-sm">
+          Concesionario líder en vehículos de lujo, ofreciendo atención personalizada y un servicio premium sin vueltas.
+        </p>
+      </div>
+
+      <!-- Menú -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-semibold text-white mb-4">Menú</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-accent transition">Inicio</a></li>
+            <li><a href="inventory.html" class="text-gray-400 hover:text-accent transition">Inventario</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-accent transition">Sobre Nosotros</a></li>
+            <li><a href="consignacion.html" class="text-gray-400 hover:text-accent transition">Vender mi auto</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Redes -->
+      <div>
+        <h4 class="font-semibold text-white mb-4">Síganos</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.instagram.com/antonucci.hnos.autos/" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-gray-700 text-white hover:text-accent transition">
+            <i data-feather="instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/Antonuccihnosautos/" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-gray-700 text-white hover:text-accent transition">
+            <i data-feather="facebook"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Antonucci Autos. Todos los derechos reservados.</p>
+      <p class="text-sm text-gray-500">
+        Powered by 
+        <a href="https://entercompany.ar" target="_blank" class="text-accent font-semibold hover:underline">Enter company</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+        // Feather icons
+        feather.replace();
+
+        // Mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuClose = document.getElementById('menu-close');
+
+        // Abrir
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Cerrar
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('nav-blur');
+                header.style.backgroundColor = 'rgba(0,0,0,0.85)';
+            } else {
+                header.classList.remove('nav-blur');
+                header.style.backgroundColor = 'transparent';
+            }
+        });
+    </script>
+     <!-- WhatsApp Floating Button (Premium - Negro) -->
+<button id="wa-float" 
+        class="wa-btn"
+        aria-label="Chatear por WhatsApp"
+        data-phone="+5492235442198">
+  <!-- SVG WhatsApp icon -->

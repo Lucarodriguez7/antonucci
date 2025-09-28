@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonucci hermanos Autos </title>
+    <meta name="description" content="Concesionario exclusivo de vehículos de alta gama. Expertos en automóviles premium y servicio personalizado.">
+    <meta property="og:image" content="http://static.photos/black/1200x630/1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="icon" href="antonucci.png" type="image/x-icon">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#1B1B1B',
+                        tertiary: '#2E2E2E',
+                        accent: '#BFBFBF',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+        .hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 4rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+      filter: blur(8px);
+      animation: smoothFocus 2.5s ease forwards;
+    }
+
+    .hero-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ddd;
+      text-align: center;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards 1s; /* aparece después del título */
+    }
+
+    @keyframes smoothFocus {
+      0% {
+        opacity: 0;
+        filter: blur(8px);
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero-btn {
+  font-family: 'Montserrat', sans-serif;
+  padding: 12px 28px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.hero-btn:hover {
+  background: #fff;
+  color: #000;
+}
+        .section-title {
+            font-size: clamp(18px, 2.5vw, 34px);
+        }
+        .body-text {
+            font-size: clamp(14px, 1.6vw, 18px);
+            line-height: 1.6;
+        }
+        .btn-primary {
+            background: linear-gradient(#FFFFFF, #F7F7F7);
+            color: #000000;
+            padding: 16px 28px;
+            border-radius: 12px;
+            box-shadow: 0 8px 28px rgba(255,255,255,0.06);
+            transition: all 200ms cubic-bezier(.22,.9,.39,1);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(255,255,255,0.12), 0 0 20px rgba(255,255,255,0.18);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #FFFFFF;
+            padding: 16px 28px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 200ms cubic-bezier(.22,.9,.39,1);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.4);
+        }
+        .card-hover {
+            transition: all 300ms cubic-bezier(.22,.9,.39,1);
+            background: rgba(255,255,255,0.03);
+        }
+        .card-hover:hover {
+            transform: scale(1.03);
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(4px);
+        }
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .nav-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            .pulse-animation {
+                animation: none;
+            }
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+  <!-- Header -->
+  <header id="main-header" class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#">
+          <img src="antonucci.png" alt="Antonucci Autos" class="h-10">
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-lg hover:text-gray-400">Inicio</a>
+      <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
+      <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
+     <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+
+        </nav>
+
+        <!-- Botón hamburguesa Mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-black text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="flex justify-end p-4">
+      <button id="menu-close" class="text-2xl">✕</button>
+    </div>
+    <nav class="flex flex-col items-center space-y-8 mt-10 font-montserrat">
+      <a href="index.html" class="text-lg hover:text-gray-400">Inicio</a>
+      <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
+      <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
+      <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+    </nav>
+  </div>
+
+
+   <!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+  <div class="parallax-bg absolute inset-0 z-0" style="background-image: url('2.jpg'); background-size: cover; background-position: center;"></div>
+  
+  <div class="container mx-auto px-6 z-20 text-center">
+    <h1 class="hero-title font-bold mb-4">ANTONUCCI HERMANOS AUTOS</h1>
+   <h2 class="hero-subtitle">Tu próximo auto, sin complicaciones.</h2>
+     <div class="mt-10"> <!-- le damos aire -->
+    <a href="#inventory" class="btn-primary">Explorar colección</a>
+  </div>
+</section>
+<style>
+  .btn-primary {
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 28px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .hero-title {
+    letter-spacing: -1px; /* un poquito más compacto */
+    background: linear-gradient(180deg, #fff, #ddd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+    .body-text {
+      font-family: 'Lato', sans-serif;
+    font-size: 1.25rem; /* un poquito más grande que normal */
+    color: #bbb;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+  }
+</style>
+<!-- Animaciones -->
+<style>
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  animation: focusInOut 4s ease forwards;
+}
+
+@keyframes focusInOut {
+  0% {
+    filter: blur(8px);
+    opacity: 0;
+  }
+  25% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  50% {
+    filter: blur(6px);
+  }
+  75% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+</style>
+<!-- Inventory Section -->
+<section id="inventory" class="py-24 bg-black">
+  <div class="container mx-auto px-6">
+    <!-- Title -->
+    <h2 class="text-4xl font-oswald font-bold text-white text-center mb-6 tracking-wide" data-aos="fade-up">
+      AUTOS DESTACADOS
+    </h2>
+    <p class="text-center text-gray-400 font-montserrat mb-16 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Descubre nuestra selección de vehículos premium disponibles en este momento.
+    </p>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Car 1 -->
+      <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative h-64 overflow-hidden">
+          <img src="amarok.jpg" alt="Mercedes-Benz S-Class 2023" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+            <h3 class="font-montserrat font-bold text-white text-lg">Volkswagen Amarok V6 Extreme 258HP</h3>
+            <p class="text-sm text-gray-300">2025 • 0 km</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <a href="amarok.html" class="btn-secondary w-full text-center block">Ver detalles</a>
+        </div>
+      </div>
+
+<!-- Car 2 -->
+<div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="200">
+  <div class="relative h-64 overflow-hidden">
+    <img src="jeepinventory.jpg" alt="Jeep Compass Limited 2021" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+      <h3 class="font-montserrat font-bold text-white text-lg">Jeep Compass Limited 4x4</h3>
+      <p class="text-sm text-gray-300">2021 • 20,000 km</p>
+    </div>
+  </div>
+  <div class="p-6">
+    <a href="compass.html" class="btn-secondary w-full text-center block">Ver detalles</a>
+  </div>
+</div>
+
+
+      <!-- Car 3 -->
+      <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative h-64 overflow-hidden">
+          <img src="fordraptor.jpg" alt="Range Rover Autobiography" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+            <h3 class="font-montserrat font-bold text-white text-lg">Ford Ranger Raptor</h3>
+            <p class="text-sm text-gray-300">2022 • 29,000 km</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <a href="#" class="btn-secondary w-full text-center block">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="text-center mt-20" data-aos="fade-up" data-aos-delay="400">
+      <a href="inventory.html" class="btn-primary inline-block px-8 py-3">Ver inventario completo</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Script para dots -->
+<script>
+  const carousel = document.getElementById('carousel');
+  const dots = document.getElementById('dots').children;
+  const items = carousel.children;
+
+  carousel.addEventListener('scroll', () => {
+    const scrollLeft = carousel.scrollLeft;
+    const itemWidth = items[0].offsetWidth + 32; // ancho + gap (space-x-8 = 2rem = 32px)
+    const index = Math.round(scrollLeft / itemWidth);
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove('bg-gray-500');
+      dots[i].classList.add('bg-gray-700');
+    }
+    dots[index].classList.remove('bg-gray-700');
+    dots[index].classList.add('bg-gray-500');
+  });
+</script>
+
+
+<!-- Somos Líderes Section -->
+<section class="py-24 bg-black relative">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="section-title font-bold mb-12 text-white tracking-wide">
+      SOMOS LÍDERES EN LO QUE HACEMOS
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl mx-auto">
+
+      <!-- Stat 1 -->
+      <div>
+        <p class="text-5xl font-extrabold text-white" data-count="500">0</p>
+        <p class="text-gray-400 mt-2">Autos Vendidos</p>
+      </div>
+
+      <!-- Stat 2 -->
+      <div>
+        <p class="text-5xl font-extrabold text-white" data-count="300">0</p>
+        <p class="text-gray-400 mt-2">Clientes Felices</p>
+      </div>
+
+      <!-- Stat 3 -->
+      <div>
+        <p class="text-5xl font-extrabold text-white" data-count="10">0</p>
+        <p class="text-gray-400 mt-2">Años de Experiencia</p>
+      </div>
+
+      <!-- Stat 4 -->
+      <div>
+        <p class="text-5xl font-extrabold text-white" data-count="50">0</p>
+        <p class="text-gray-400 mt-2">Marcas Premium</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Detecta cuando la sección entra en pantalla y arranca la animación
+  const counters = document.querySelectorAll('[data-count]');
+  let animated = false;
+
+  function animateCounters() {
+    if (animated) return; // solo una vez
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-count');
+      let count = 0;
+      const speed = target / 100; // más grande → más rápido
+      const update = () => {
+        if (count < target) {
+          count += speed;
+          counter.textContent = Math.floor(count);
+          requestAnimationFrame(update);
+        } else {
+          counter.textContent = target + (target > 20 ? '+' : ''); // agrega "+" si aplica
+        }
+      };
+      update();
+    });
+    animated = true;
+  }
+
+  // Usa IntersectionObserver para detectar scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) animateCounters();
+    });
+  }, { threshold: 0.4 });
+
+  observer.observe(document.querySelector('section'));
+</script>
+
+
+<!-- Instagram Section -->
+<section class="py-20 bg-black">
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Mockup -->
+    <div class="md:w-1/2 flex justify-center" data-aos="fade-right">
+      <img src="mockup2.png" alt="Instagram Antonucci Autos" class="max-h-[500px] rounded-2xl shadow-2xl">
+    </div>
+    
+    <!-- Texto + CTA -->
+    <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+      <h2 class="section-title font-bold mb-6">
+        ¿Todavía no nos seguís?
+      </h2>
+      <p class="body-text opacity-90 mb-8">
+        Unite a nuestra comunidad en <span class="font-bold text-accent">Instagram</span> 
+        y no te pierdas ninguna de nuestras novedades, lanzamientos exclusivos y autos premium.
+      </p>
+      <a href="https://instagram.com/antonucci.hnos.autos" target="_blank"
+         class="btn-primary inline-flex items-center gap-2">
+        <i data-feather="instagram" class="w-5 h-5"></i> Seguir en Instagram
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Section: Consigná tu auto -->
+<section class="relative py-32 bg-gradient-to-r from-black via-neutral-900 to-black overflow-hidden">
+  <!-- Fondo con imagen + overlay -->
+  <div class="absolute inset-0">
+    <img src="bannerconsigna.jpg" alt="Consigná tu auto" 
+         class="w-full h-full object-cover opacity-30">
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+
+  <!-- Contenido -->
+  <div class="relative container mx-auto px-6 text-center z-10">
+    <h2 class="text-4xl md:text-6xl font-oswald font-bold text-white mb-6 tracking-wider" data-aos="fade-up">
+      CONSIGNÁ TU AUTO <span class="text-accent">CON NOSOTROS</span>
+    </h2>
+    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="150">
+      Vendé tu vehículo de forma <span class="text-white font-semibold">rápida, segura y al mejor precio</span>, con la confianza y respaldo de nuestro equipo.
+    </p>
+  <a href="consignacion.html" 
+   class="relative inline-block px-12 py-4 
+          bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 
+          text-black font-extrabold text-lg tracking-wide rounded-full 
+          shadow-[0_0_20px_rgba(255,223,0,0.6)] 
+          transition-transform duration-500 ease-out 
+          hover:scale-110 hover:shadow-[0_0_40px_rgba(255,223,0,0.9)] 
+          overflow-hidden group"
+   data-aos="zoom-in" data-aos-delay="300">
+  
+  <span class="relative z-10">Quiero vender mi auto</span>
+
+  <!-- Shimmer effect -->
+  <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent 
+               translate-x-[-100%] group-hover:translate-x-[200%] 
+               transition-transform duration-1000 ease-in-out"></span>
+</a>
+  </div>
+</section>
+<!-- Section Financiamiento -->
+<section class="relative py-20 bg-black text-white">
+  <div class="container mx-auto px-6 text-center">
+    <!-- Título -->
+    <h2 class="text-3xl md:text-4xl font-bold tracking-wide mb-6" data-aos="fade-up">
+      Financiamientos para todas las billeteras
+    </h2>
+    <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+      En <span class="text-red-500 font-semibold">Antonucci</span> nos amoldamos a tu bolsillo.  
+      Elegí tu auto, tu plan y tu ritmo de pago.
+    </p>
+
+    <!-- Pasos en grid -->
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <!-- Paso 1 -->
+      <div class="p-6 border border-neutral-800 rounded-xl hover:border-red-500 transition" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">1</div>
+          <h3 class="ml-3 font-semibold text-xl">Elegí tu auto</h3>
+        </div>
+        <p class="text-gray-400">Seleccioná el modelo que más te gusta de nuestra colección.</p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="p-6 border border-neutral-800 rounded-xl hover:border-red-500 transition" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">2</div>
+          <h3 class="ml-3 font-semibold text-xl">Elegí tu plan</h3>
+        </div>
+        <p class="text-gray-400">Opciones de cuotas fijas, variables o planes bancarios.</p>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="p-6 border border-neutral-800 rounded-xl hover:border-red-500 transition" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 flex items-center justify-center rounded-full bg-red-600 text-white font-bold">3</div>
+          <h3 class="ml-3 font-semibold text-xl">Disfrutá tu auto</h3>
+        </div>
+        <p class="text-gray-400">Firmá y empezá a manejar. El resto se ajusta a vos.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-14" data-aos="fade-up" data-aos-delay="500">
+      <a href="consignacion.html" 
+         class="inline-block px-10 py-4 bg-red-600 text-white font-semibold rounded-full 
+                hover:bg-red-700 transition">
+        Conocer más
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FAQ Section (acordeón funcional - abre 1 a la vez) -->
+<section id="faq" class="py-24 bg-black relative overflow-hidden">
+  <div class="container mx-auto px-6 relative z-10">
+    <h2 class="section-title font-bold mb-20 text-center text-white tracking-wide" data-aos="fade-up">
+      PREGUNTAS FRECUENTES
+    </h2>
+
+    <div class="space-y-6 max-w-3xl mx-auto">
+
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-zinc-900/60 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/10" 
+           data-aos="fade-up" data-aos-delay="100">
+        <button class="faq-question w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-1">
+          <h3 class="font-oswald text-xl text-white">¿Qué planes de financiación me conviene?</h3>
+          <i data-feather="chevron-down" class="icon text-accent w-5 h-5"></i>
+        </button>
+        <div id="faq-1" class="faq-answer overflow-hidden" aria-hidden="true">
+          <p class="body-text text-gray-300 mt-3">
+            Tenemos todo tipo de planes según el modelo y la necesidad, ¡siempre hay una opción para vos!
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item bg-zinc-900/60 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/10" 
+           data-aos="fade-up" data-aos-delay="200">
+        <button class="faq-question w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-2">
+          <h3 class="font-oswald text-xl text-white">¿Qué garantía incluye?</h3>
+          <i data-feather="chevron-down" class="icon text-accent w-5 h-5"></i>
+        </button>
+        <div id="faq-2" class="faq-answer overflow-hidden" aria-hidden="true">
+          <p class="body-text text-gray-300 mt-3">
+            Garantía oficial para manejar con tranquilidad en ciudad, ruta o campo.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item bg-zinc-900/60 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/10" 
+           data-aos="fade-up" data-aos-delay="300">
+        <button class="faq-question w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-3">
+          <h3 class="font-oswald text-xl text-white">¿Puedo entregar mi auto usado como parte de pago?</h3>
+          <i data-feather="chevron-down" class="icon text-accent w-5 h-5"></i>
+        </button>
+        <div id="faq-3" class="faq-answer overflow-hidden" aria-hidden="true">
+          <p class="body-text text-gray-300 mt-3">
+            Sí, recibimos tu vehículo usado como parte de pago y lo tomamos al mejor valor de mercado.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* animación icono */
+  .icon { transition: transform .28s ease; display: inline-block; }
+  .icon.rotate { transform: rotate(180deg); }
+
+  /* respuesta animada (max-height controlado por JS) */
+  .faq-answer { max-height: 0; transition: max-height 400ms ease; }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Aseguramos que Feather reemplace iconos (si lo usás)
+    if (window.feather) feather.replace();
+
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach(btn => {
+      const faqItem = btn.closest('.faq-item');
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = faqItem.querySelector('.icon');
+
+      // estado inicial (cerrado)
+      answer.style.maxHeight = null;
+      btn.setAttribute('aria-expanded', 'false');
+      answer.setAttribute('aria-hidden', 'true');
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // cerrar todos
+        document.querySelectorAll('.faq-item').forEach(other => {
+          const b = other.querySelector('.faq-question');
+          const a = other.querySelector('.faq-answer');
+          const ic = other.querySelector('.icon');
+          if (b !== btn) {
+            b.setAttribute('aria-expanded', 'false');
+            a.style.maxHeight = null;
+            a.setAttribute('aria-hidden', 'true');
+            if (ic) ic.classList.remove('rotate');
+          }
+        });
+
+        // toggle actual
+        if (!isOpen) {
+          // abrir
+          btn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          answer.setAttribute('aria-hidden', 'false');
+          if (icon) icon.classList.add('rotate');
+        } else {
+          // cerrar
+          btn.setAttribute('aria-expanded', 'false');
+          answer.style.maxHeight = null;
+          answer.setAttribute('aria-hidden', 'true');
+          if (icon) icon.classList.remove('rotate');
+        }
+      });
+    });
+
+    // Ajusta maxHeight si cambias tamaño de ventana (para mantener la apertura con la altura correcta)
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const answer = item.querySelector('.faq-answer');
+        const btn = item.querySelector('.faq-question');
+        if (btn.getAttribute('aria-expanded') === 'true') {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+</script>
+
+<section id="contact" class="py-24 bg-black relative overflow-hidden">
+  <div class="container mx-auto px-6 relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-wide text-white" data-aos="fade-up">
+      SUCURSALES
+    </h2>
+
+    <div class="flex flex-col lg:flex-row gap-12">
+      
+      <!-- Info -->
+      <div class="lg:w-1/2 space-y-8" data-aos="fade-right">
+        <p class="text-gray-300 text-lg leading-relaxed">
+        <p class="text-gray-300 text-lg leading-relaxed">
+  Contamos con 2 sucursales ubicadas estratégicamente en Mar del Plata para que siempre tengas una cerca y te resulte más cómodo visitarnos.
+</p>
+        </p>
+
+        <div class="space-y-6">
+          <!-- Sucursales -->
+          <div class="flex items-start gap-4">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 border border-gray-700 text-accent">
+              <i data-feather="map-pin"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Sucursales</h4>
+              <p class="text-gray-400">Juan B Justo 2974, Mar del Plata</p>
+              <p class="text-gray-400">Juan B Justo 1920, Mar del Plata</p>
+            </div>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="flex items-start gap-4">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 border border-gray-700 text-accent">
+              <i data-feather="phone"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-white mb-1">Teléfono</h4>
+              <p class="text-gray-400">+54 9 223 544-2198</p>
+            </div>
+          </div>
+
+ 
+        </div>
+      </div>
+
+      <!-- Mapa (antes estaba el form) -->
+      <div class="lg:w-1/2" data-aos="fade-left">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878895276!2d-57.5693589!3d-38.0207533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584de914ac59c0d%3A0xcaeb15edcf3e5716!2sAntonucci%20Hnos%20Autos!5e0!3m2!1ses-419!2sar!4v1699999999999!5m2!1ses-419!2sar" 
+          width="100%" 
+          height="100%" 
+          style="border:0; border-radius: 1rem;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black py-14">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      
+      <!-- Logo y descripción -->
+      <div>
+<img src="antonucci.png" alt="Antonucci Logo" class="h-10 mb-3">
+        <p class="text-gray-400 max-w-sm">
+          Concesionario líder en vehículos de lujo, ofreciendo atención personalizada y un servicio premium sin vueltas.
+        </p>
+      </div>
+
+      <!-- Menú -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-semibold text-white mb-4">Menú</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-accent transition">Inicio</a></li>
+            <li><a href="#inventory" class="text-gray-400 hover:text-accent transition">Inventario</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-accent transition">Servicios</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-accent transition">Sobre Nosotros</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-accent transition">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Redes -->
+      <div>
+        <h4 class="font-semibold text-white mb-4">Síganos</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.instagram.com/antonucci.hnos.autos/" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-gray-700 text-white hover:text-accent transition">
+            <i data-feather="instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/Antonuccihnosautos/" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-gray-700 text-white hover:text-accent transition">
+            <i data-feather="facebook"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Antonucci Autos. Todos los derechos reservados.</p>
+      <p class="text-sm text-gray-500">
+        Powered by 
+        <a href="https://entercompany.ar" target="_blank" class="text-accent font-semibold hover:underline">Enter company</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+  // Feather icons
+  feather.replace();
+
+  // Mobile menu
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuClose = document.getElementById('menu-close');
+
+  // Abrir
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Cerrar
+  menuClose.addEventListener('click', () => {
+    mobileMenu.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+  });
+
+  // Header scroll effect
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('nav-blur');
+      header.style.backgroundColor = 'rgba(0,0,0,0.85)';
+    } else {
+      header.classList.remove('nav-blur');
+      header.style.backgroundColor = 'transparent';
+    }
+  });
+</script>
+ <!-- WhatsApp Floating Button (Premium - Negro) -->
+<button id="wa-float" 
+        class="wa-btn"
+        aria-label="Chatear por WhatsApp"
+        data-phone="+5492235442198">
+  <!-- SVG WhatsApp icon -->
+  <span class="wa-icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M20.52 3.48A11.87 11.87 0 0012 0C5.373 0 .01 5.363.01 12c0 2.116.553 4.18 1.6 6.01L0 24l6.32-1.64A11.87 11.87 0 0012 24c6.627 0 12-5.373 12-12 0-1.95-.43-3.8-1.48-5.52zM12 21.5c-1.13 0-2.24-.2-3.28-.6l-.24-.1-3.75.98.99-3.66-.14-.25A9.74 9.74 0 012.5 12 9.5 9.5 0 1112 21.5zM17.4 15.1c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.78.98-.95 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.78-1.51-1.75-1.69-2.05-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.48.1-.2.05-.36-.02-.5-.08-.14-.66-1.6-.9-2.2-.24-.58-.49-.5-.68-.51-.17-.01-.37-.01-.57-.01-.2 0-.45.06-.7.3-.25.24-.96.94-.96 2.3 0 1.36 1.04 2.7 1.19 2.94.15.24 2.07 3.2 5.02 4.74.7.3 1.26.46 1.72.6.72.22 1.38.19 1.9.12.58-.09 1.78-.66 2.06-1.34.28-.68.28-1.27.2-1.4-.08-.13-.32-.2-.62-.35z"/>
+    </svg>
+  </span>
+  <span class="wa-text">WhatsApp</span>
+</button>
+
+<style>
+  .wa-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, rgba(20,20,20,0.98), rgba(6,6,6,0.98));
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    cursor: pointer;
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    min-width: 64px;
+  }
+  .wa-icon {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:36px;
+    height:36px;
+    border-radius:9999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    color: #25D366;
+  }
+  .wa-text {
+    font-weight:600;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-size: 15px;
+    color: #EFEFEF;
+  }
+  .wa-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.65), 0 0 24px rgba(37,211,102,0.06);
+    border-color: rgba(37,211,102,0.18);
+  }
+  .wa-btn:active { transform: translateY(-2px); }
+  @media (max-width: 640px) {
+    .wa-btn { right: 14px; bottom: 14px; padding: 12px 14px; }
+    .wa-icon { width:32px; height:32px; }
+    .wa-text { display:none; }
+  }
+</style>
+
+<script>
+  (function() {
+    const btn = document.getElementById('wa-float');
+    btn.addEventListener('click', () => {
+      const phone = btn.getAttribute('data-phone') || '+5492235442198';
+      const cleanPhone = phone.replace(/\s+/g, '').replace('+','');
+      const url = `https://wa.me/${cleanPhone}`;
+      window.open(url, '_blank');
+    });
+  })();
+</script>
+
+</body>
+</html>

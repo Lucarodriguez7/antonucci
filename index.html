@@ -13,7 +13,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+</style>
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
@@ -34,6 +36,18 @@
         }
     </script>
     <style>
+      @font-face {
+  font-family: 'AmericanSensationBold';
+  src: url('fonts/AmericanSensationBold.woff2') format('woff2'),
+       url('fonts/AmericanSensationBold.woff') format('woff'),
+       url('fonts/AmericanSensationBold.ttf') format('truetype');
+       
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
         html {
             scroll-behavior: smooth;
         }
@@ -44,16 +58,17 @@
             overflow-x: hidden;
         }
         .hero-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 4rem;
-      font-weight: 600;
-      color: #fff;
-      text-align: center;
-      opacity: 0;
-      filter: blur(8px);
-      animation: smoothFocus 2.5s ease forwards;
-    }
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
 
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;   /* más chico en mobile */
+    line-height: 1.2;  /* compacto */
+    letter-spacing: -0.5px;
+  }
+}
     .hero-subtitle {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.5rem;
@@ -206,18 +221,118 @@
   </div>
 
 
-   <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
-  <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
-  <div class="parallax-bg absolute inset-0 z-0" style="background-image: url('2.jpg'); background-size: cover; background-position: center;"></div>
-  
-  <div class="container mx-auto px-6 z-20 text-center">
-    <h1 class="hero-title font-bold mb-4">ANTONUCCI HERMANOS AUTOS</h1>
-   <h2 class="hero-subtitle">Tu próximo auto, sin complicaciones.</h2>
-     <div class="mt-10"> <!-- le damos aire -->
-    <a href="#inventory" class="btn-primary">Explorar colección</a>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+  <!-- Fondo -->
+  <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('image\ \(24\).png');"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-20 container mx-auto px-6 text-center">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+      .orbitron { font-family: 'Orbitron', sans-serif; }
+
+      /* Texto metálico */
+      .metal-text {
+        background: linear-gradient(180deg, #f6f7f8 0%, #cfcfcf 30%, #9ea1a4 65%, #f3f4f5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      }
+
+      /* Subtexto metálico */
+      .metal-sub {
+        background: linear-gradient(180deg, #e9e9e9 0%, #c0c0c0 40%, #8d8d8d 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+        letter-spacing: 2px;
+      }
+
+      .logo-a {
+        filter: drop-shadow(0 8px 28px rgba(0,0,0,0.65));
+      }
+    </style>
+
+<!-- Logo + Texto -->
+<div class="flex items-center justify-center glow-behind ">
+  <!-- A metálica -->
+  <img src="AP.png"
+       alt="Letra A metálica Antonucci"
+       class="logo-a w-16 sm:w-20 md:w-24 lg:w-28 object-contain translate-y-1 animate-fade-in" />
+
+  <!-- Bloque texto -->
+  <div class="flex items-end -ml-4 animate-blur-in ntonucci-block">
+    <!-- NTONUCCI -->
+    <h1 class="orbitron metal-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none">
+      NTONUCCI
+    </h1>
+
+    <!-- Hnos. + AUTOS -->
+    <div class="flex flex-col items-start leading-tight ml-2">
+      <span class="orbitron metal-sub text-sm sm:text-base md:text-lg font-semibold">Hnos.</span>
+      <span class="orbitron metal-sub text-sm sm:text-base md:text-lg font-semibold">AUTOS</span>
+    </div>
   </div>
+</div>
+
+<!-- Slogan premium -->
+<p class="mt-6 text-base sm:text-lg md:text-xl font-light tracking-wide text-gray-200 text-center animate-blur-in-up">
+  Tu próximo auto, sin complicaciones.
+</p>
+
+<!-- Botón -->
+<div class="mt-6">
+  <a href="#inventory" class="btn-primary">Explorar colección</a>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Exo+2:wght@300;400;600&display=swap');
+
+  p { font-family: 'Exo 2', sans-serif; }
+
+  /* Animación fade-in */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  /* Animación blur → focus */
+  @keyframes blurIn {
+    from { filter: blur(8px); opacity: 0; }
+    to   { filter: blur(0); opacity: 1; }
+  }
+  .animate-blur-in {
+    animation: blurIn 2s ease-out forwards;
+    animation-delay: 0.5s; /* después de la A */
+  }
+
+  @keyframes blurInUp {
+    from { filter: blur(8px); opacity: 0; transform: translateY(20px); }
+    to   { filter: blur(0); opacity: 1; transform: translateY(0); }
+  }
+  .animate-blur-in-up {
+    animation: blurInUp 1.5s ease-out forwards;
+    animation-delay: 1s; /* entra después del logo */
+  }
+    /* Ajuste solo en mobile */
+  @media (max-width: 640px) {
+    .ntonucci-block {
+      transform: translateY(-4px); /* sube apenas */
+    }
+  }
+</style>
+
 </section>
+
+
+
 <style>
   .btn-primary {
     font-family: 'Montserrat', sans-serif;
@@ -290,7 +405,7 @@
       AUTOS DESTACADOS
     </h2>
     <p class="text-center text-gray-400 font-montserrat mb-16 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-      Descubre nuestra selección de vehículos premium disponibles en este momento.
+      Descubre nuestra selección de vehículos disponibles en este momento.
     </p>
 
     <!-- Grid -->
@@ -368,9 +483,8 @@
   });
 </script>
 
-
 <!-- Somos Líderes Section -->
-<section class="py-24 bg-black relative">
+<section id="stats" class="py-24 bg-black relative">
   <div class="container mx-auto px-6 text-center">
     <h2 class="section-title font-bold mb-12 text-white tracking-wide">
       SOMOS LÍDERES EN LO QUE HACEMOS
@@ -380,31 +494,66 @@
 
       <!-- Stat 1 -->
       <div>
-        <p class="text-5xl font-extrabold text-white" data-count="500">0</p>
+        <p class="text-5xl font-extrabold text-white" data-count="500">0+</p>
         <p class="text-gray-400 mt-2">Autos Vendidos</p>
       </div>
 
       <!-- Stat 2 -->
       <div>
-        <p class="text-5xl font-extrabold text-white" data-count="300">0</p>
+        <p class="text-5xl font-extrabold text-white" data-count="300">0+</p>
         <p class="text-gray-400 mt-2">Clientes Felices</p>
       </div>
 
       <!-- Stat 3 -->
       <div>
-        <p class="text-5xl font-extrabold text-white" data-count="10">0</p>
+        <p class="text-5xl font-extrabold text-white" data-count="20">0+</p>
         <p class="text-gray-400 mt-2">Años de Experiencia</p>
       </div>
 
       <!-- Stat 4 -->
       <div>
-        <p class="text-5xl font-extrabold text-white" data-count="50">0</p>
-        <p class="text-gray-400 mt-2">Marcas Premium</p>
+        <p class="text-5xl font-extrabold text-white" data-count="50">0+</p>
+        <p class="text-gray-400 mt-2">Marcas</p>
       </div>
 
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll("#stats [data-count]");
+    let animated = false;
+
+    const animateCounter = (el, target) => {
+      let count = 0;
+      const increment = target / 100; // velocidad
+      const interval = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          el.textContent = target + "+"; // número final con +
+          clearInterval(interval);
+        } else {
+          el.textContent = Math.floor(count) + "+";
+        }
+      }, 20);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !animated) {
+        counters.forEach((counter) => {
+          const target = +counter.getAttribute("data-count");
+          animateCounter(counter, target);
+        });
+        animated = true; // evita que se repita
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector("#stats"));
+  });
+</script>
+
+
 
 <script>
   // Detecta cuando la sección entra en pantalla y arranca la animación
@@ -458,7 +607,7 @@
       </h2>
       <p class="body-text opacity-90 mb-8">
         Unite a nuestra comunidad en <span class="font-bold text-accent">Instagram</span> 
-        y no te pierdas ninguna de nuestras novedades, lanzamientos exclusivos y autos premium.
+        y no te pierdas ninguna de nuestras novedades, lanzamientos exclusivos y autos de todas las gamas.
       </p>
       <a href="https://instagram.com/antonucci.hnos.autos" target="_blank"
          class="btn-primary inline-flex items-center gap-2">
@@ -547,13 +696,7 @@
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="mt-14" data-aos="fade-up" data-aos-delay="500">
-      <a href="consignacion.html" 
-         class="inline-block px-10 py-4 bg-red-600 text-white font-semibold rounded-full 
-                hover:bg-red-700 transition">
-        Conocer más
-      </a>
+
     </div>
   </div>
 </section>

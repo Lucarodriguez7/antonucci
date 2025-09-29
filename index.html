@@ -314,11 +314,21 @@ html, body {
 
 <!-- Hero Section -->
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
-  <!-- Overlay -->
   <div class="absolute inset-0 bg-black/60 z-10"></div>
 
-  <!-- Fondo -->
-  <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('image\ \(24\).png');"></div>
+<!-- Fondo responsive -->
+<picture class="absolute inset-0 z-0">
+  <!-- Mobile (hasta 640px) -->
+  <source media="(max-width: 640px)" srcset="fondomobile.jpg" />
+  <!-- Desktop -->
+  <img 
+    src="image (24).png" 
+    alt="Camionetas y SUV"
+    class="w-full h-full object-cover"
+  />
+</picture>
+
+
 
   <!-- Contenido -->
   <div class="relative z-20 container mx-auto px-6 text-center">
@@ -346,29 +356,46 @@ html, body {
       .logo-a {
         filter: drop-shadow(0 8px 28px rgba(0,0,0,0.65));
       }
-    </style>
+      .bg-fondo {
+  background-size: cover;
+  background-position: center;
+}
 
-<!-- Logo + Texto -->
-<div class="flex items-center justify-center glow-behind ">
-  <!-- A metálica -->
+@media (max-width: 640px) {
+  .bg-fondo {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+    </style>
+<div class="flex items-center justify-center glow-behind">
+  <!-- Imagen A -->
   <img src="AP.png"
        alt="Letra A metálica Antonucci"
-       class="logo-a w-16 sm:w-20 md:w-24 lg:w-28 object-contain translate-y-1 animate-fade-in" />
+       class="w-28 sm:w-32 md:w-36 lg:w-40 object-contain animate-fade-in -mt-[18px]" />
 
-  <!-- Bloque texto -->
-  <div class="flex items-end -ml-4 animate-blur-in ntonucci-block">
-    <!-- NTONUCCI -->
-    <h1 class="orbitron metal-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none">
-      NTONUCCI
-    </h1>
-
-    <!-- Hnos. + AUTOS -->
-    <div class="flex flex-col items-start leading-tight ml-2">
-      <span class="orbitron metal-sub text-sm sm:text-base md:text-lg font-semibold">Hnos.</span>
-      <span class="orbitron metal-sub text-sm sm:text-base md:text-lg font-semibold">AUTOS</span>
+  <!-- Texto -->
+  <div class="flex flex-col leading-tight animate-blur-in -ml-2 sm:-ml-3 md:-ml-4">
+    <div class="flex items-baseline">
+      <h1 class="orbitron metal-text text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+        NTONUCCI
+      </h1>
+      <span class="orbitron metal-sub text-[12px] sm:text-xs md:text-sm font-semibold ml-1">
+        Hnos.
+      </span>
     </div>
+<span class="orbitron metal-sub text-[17px] sm:text-xs md:text-sm font-semibold ml-20">
+  AUTOS
+</span>
+
   </div>
 </div>
+
+
+
+
+
+
 
 <!-- Slogan premium -->
 <p class="mt-6 text-base sm:text-lg md:text-xl font-light tracking-wide text-gray-200 text-center animate-blur-in-up">
@@ -418,6 +445,9 @@ html, body {
       transform: translateY(-4px); /* sube apenas */
     }
   }
+  .ml-0\.25 {
+  margin-left: 0.0625rem; /* 1px aprox */
+}
 </style>
 
 </section>

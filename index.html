@@ -16,7 +16,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 </style>
-
+ 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
         tailwind.config = {
@@ -90,6 +90,7 @@
         filter: blur(0);
       }
     }
+    
 
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -181,6 +182,85 @@
     </style>
 </head>
 <body class="antialiased">
+ <!-- Preloader -->
+<div id="preloader">
+  <div class="logo-wrapper">
+    <img src="AP.png" alt="Logo Antonucci" class="logo" />
+    <div class="shine"></div>
+  </div>
+</div>
+
+<style>
+  /* Preloader */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+  }
+
+  .logo-wrapper {
+    position: relative;
+    display: inline-block;
+    animation: zoomFadeIn 1.2s ease forwards;
+  }
+
+  .logo {
+    width: 160px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 25px rgba(255,255,255,0.3));
+  }
+
+  /* Shine efecto adaptado a la forma PNG */
+.shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 48%,
+    rgba(255, 255, 255, 0.2) 50%,  /* línea fina y suave */
+    rgba(255, 255, 255, 0) 52%
+  );
+  background-size: 200% 100%;
+  -webkit-mask-image: url("AP.png"); /* máscara = forma del logo */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  animation: shineAnim 3s ease-in-out forwards;
+}
+  /* Entrada dinámica */
+  @keyframes zoomFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Shine pasando */
+  @keyframes shineAnim {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+</style>
+
   <!-- Header -->
   <header id="main-header" class="fixed w-full z-50 transition-all duration-300">
     <div class="container mx-auto px-6 py-4">
@@ -374,6 +454,20 @@
   color: #fff;
   text-align: center;
   animation: focusInOut 4s ease forwards;
+}
+.animate-fade-in,
+  .animate-blur-in,
+  .animate-blur-in-up {
+    animation-play-state: paused;
+    opacity: 0;
+  }
+
+ body.loaded .animate-fade-in,
+body.loaded .animate-blur-in,
+body.loaded .animate-blur-in-up {
+  animation-play-state: running;
+  opacity: 1;
+  animation-delay: 0s !important; /* forzar a que arranquen ya */
 }
 
 @keyframes focusInOut {
@@ -1061,6 +1155,21 @@
       window.open(url, '_blank');
     });
   })();
+</script>
+<script>
+  window.addEventListener("load", () => {
+  setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+    preloader.style.transition = "opacity 0.8s ease";
+    preloader.style.opacity = "0";
+
+    setTimeout(() => {
+      preloader.style.display = "none";
+      document.body.classList.add("loaded"); // 🔥 dispara las animaciones del hero
+      AOS.init({ duration: 1200, once: true, easing: "ease-in-out" });
+    }, 800);
+  }, 3000);
+});
 </script>
 
 </body>

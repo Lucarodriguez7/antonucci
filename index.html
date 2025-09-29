@@ -312,102 +312,117 @@ html, body {
   </div>
 
 
-<!-- Hero Section -->
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0 bg-black/60 z-10"></div>
 
-<!-- Fondo responsive -->
-<picture class="absolute inset-0 z-0">
-  <!-- Mobile (hasta 640px) -->
-  <source media="(max-width: 640px)" srcset="fondomobile.jpg" />
-  <!-- Desktop -->
-  <img 
-    src="image (24).png" 
-    alt="Camionetas y SUV"
-    class="w-full h-full object-cover"
-  />
-</picture>
+  <!-- Fondo responsive -->
+  <picture class="absolute inset-0 z-0">
+    <!-- Mobile -->
+    <source media="(max-width: 640px)" srcset="fondomobile.jpg" />
+    <!-- Desktop -->
+    <img 
+      src="fondito.png" 
+      alt="Camionetas y SUV"
+      class="w-full h-full object-cover lg:bg-fondo-desktop"
+    />
+  </picture>
 
 
 
-  <!-- Contenido -->
-  <div class="relative z-20 container mx-auto px-6 text-center">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-      .orbitron { font-family: 'Orbitron', sans-serif; }
 
-      /* Texto metálico */
-      .metal-text {
-        background: linear-gradient(180deg, #f6f7f8 0%, #cfcfcf 30%, #9ea1a4 65%, #f3f4f5 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 6px 18px rgba(0,0,0,0.6);
-      }
+ <!-- Contenido -->
+<div class="relative z-20 container mx-auto px-6 text-center">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+    .orbitron { font-family: 'Orbitron', sans-serif; }
 
-      /* Subtexto metálico */
-      .metal-sub {
-        background: linear-gradient(180deg, #e9e9e9 0%, #c0c0c0 40%, #8d8d8d 80%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 3px 10px rgba(0,0,0,0.6);
-        letter-spacing: 2px;
-      }
+    /* Texto metálico */
+    .metal-text {
+      background: linear-gradient(180deg, #f6f7f8 0%, #cfcfcf 30%, #9ea1a4 65%, #f3f4f5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
 
-      .logo-a {
-        filter: drop-shadow(0 8px 28px rgba(0,0,0,0.65));
-      }
+    /* Subtexto metálico */
+    .metal-sub {
+      background: linear-gradient(180deg, #e9e9e9 0%, #c0c0c0 40%, #8d8d8d 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+      letter-spacing: 2px;
+    }
+
+    .logo-a {
+      filter: drop-shadow(0 8px 28px rgba(0,0,0,0.65));
+    }
+
+    .bg-fondo {
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Ajustes SOLO mobile */
+    @media (max-width: 640px) {
       .bg-fondo {
-  background-size: cover;
-  background-position: center;
-}
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
 
-@media (max-width: 640px) {
-  .bg-fondo {
-    background-size: contain;
-    background-repeat: no-repeat;
+    /* Ajustes SOLO desktop */
+   @media (min-width: 1024px) {
+  .slogan {
+    margin-top: 7rem; /* bajalo más, probá entre 5rem y 7rem */
+  }
+
+  .boton-hero {
+    margin-top: 2.5rem; /* separalo un poco más del slogan */
   }
 }
-    </style>
-<div class="flex items-center justify-center glow-behind">
-  <!-- Imagen A -->
-  <img src="AP.png"
-       alt="Letra A metálica Antonucci"
-       class="w-28 sm:w-32 md:w-36 lg:w-40 object-contain animate-fade-in -mt-[18px]" />
+    
+  </style>
 
-  <!-- Texto -->
-  <div class="flex flex-col leading-tight animate-blur-in -ml-2 sm:-ml-3 md:-ml-4">
-    <div class="flex items-baseline">
-      <h1 class="orbitron metal-text text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
-        NTONUCCI
-      </h1>
-      <span class="orbitron metal-sub text-[12px] sm:text-xs md:text-sm font-semibold ml-1">
-        Hnos.
+  <div class="flex items-center justify-center glow-behind">
+    <!-- Imagen A -->
+    <img src="AP.png"
+         alt="Letra A metálica Antonucci"
+         class="w-28 sm:w-32 md:w-36 lg:w-40 object-contain animate-fade-in -mt-[18px]" />
+
+    <!-- Texto -->
+    <div class="flex flex-col leading-tight animate-blur-in -ml-6 sm:-ml-8 md:-ml-10 ntonucci-block">
+      <div class="flex items-baseline">
+        <h1 class="orbitron metal-text text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+          NTONUCCI
+        </h1>
+        <span class="orbitron metal-sub text-[12px] sm:text-xs md:text-sm font-semibold ml-1">
+          Hnos.
+        </span>
+      </div>
+      <div class="flex justify-end">
+  <span class="orbitron metal-sub text-[14px] sm:text-sm md:text-base font-semibold">
+        AUTOS
       </span>
+      </div>
     </div>
-<span class="orbitron metal-sub text-[17px] sm:text-xs md:text-sm font-semibold ml-20">
-  AUTOS
-</span>
+  </div>
 
+  <!-- Slogan premium -->
+  <p class="mt-48 sm:mt-10 md:mt-14 text-base sm:text-lg md:text-xl font-light tracking-wide text-gray-200 text-center animate-blur-in-up slogan">
+    Tu próximo auto, sin complicaciones.
+  </p>
+
+  <!-- Botón -->
+  <div class="mt-6 sm:mt-10 md:mt-14 boton-hero">
+    <a href="#inventory" class="btn-primary">Explorar colección</a>
   </div>
 </div>
 
 
 
 
-
-
-
-<!-- Slogan premium -->
-<p class="mt-6 text-base sm:text-lg md:text-xl font-light tracking-wide text-gray-200 text-center animate-blur-in-up">
-  Tu próximo auto, sin complicaciones.
-</p>
-
-<!-- Botón -->
-<div class="mt-6">
-  <a href="#inventory" class="btn-primary">Explorar colección</a>
-</div>
-
 <style>
+  
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Exo+2:wght@300;400;600&display=swap');
 
   p { font-family: 'Exo 2', sans-serif; }

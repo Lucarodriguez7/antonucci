@@ -11,6 +11,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
      <link rel="icon" href="antonucci.png" type="image/x-icon">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  if (localStorage.getItem("preloaderShown")) {
+    document.documentElement.classList.add("no-preloader");
+  }
+</script>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
@@ -181,6 +186,10 @@ html, body {
                 transform: none !important;
             }
         }
+        .no-preloader #preloader {
+  display: none !important;
+}
+
     </style>
 </head>
 <body class="antialiased">
@@ -1159,19 +1168,26 @@ body.loaded .animate-blur-in-up {
   })();
 </script>
 <script>
-  window.addEventListener("load", () => {
-  setTimeout(() => {
-    const preloader = document.getElementById("preloader");
-    preloader.style.transition = "opacity 0.8s ease";
-    preloader.style.opacity = "0";
 
-    setTimeout(() => {
-      preloader.style.display = "none";
-      document.body.classList.add("loaded"); // 🔥 dispara las animaciones del hero
-      AOS.init({ duration: 1200, once: true, easing: "ease-in-out" });
-    }, 800);
-  }, 3000);
-});
+ window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+
+    if (!localStorage.getItem("preloaderShown")) {
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+        preloader.style.transition = "opacity 0.8s ease";
+        setTimeout(() => {
+          preloader.style.display = "none";
+          document.body.classList.add("loaded");
+        }, 800);
+      }, 3000); // duración del preloader
+
+      localStorage.setItem("preloaderShown", "true");
+    } else {
+      document.body.classList.add("loaded");
+    }
+  });
+
 </script>
 
 </body>

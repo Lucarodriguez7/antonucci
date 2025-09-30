@@ -11,6 +11,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
      <link rel="icon" href="antonucci.png" type="image/x-icon">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script>
   if (localStorage.getItem("preloaderShown")) {
     document.documentElement.classList.add("no-preloader");
@@ -357,7 +359,7 @@ html, body {
       <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>    
      <a href="https://vehiculos.mercadolibre.com.ar/_CustId_795977040" 
    target="_blank" 
-   class="btn-ml">
+   class="btn-ml px-6 py-">
    <img src="mercadolibre.png" 
         alt="Mercado Libre" class="w-5 h-5">
    <span>Mercado Libre</span>
@@ -378,7 +380,7 @@ html, body {
     <source media="(max-width: 640px)" srcset="fondomobile.jpg" />
     <!-- Desktop -->
     <img 
-      src="fondito.png" 
+      src="fondo.jpg" 
       alt="Camionetas y SUV"
       class="w-full h-full object-cover lg:bg-fondo-desktop"
     />
@@ -427,16 +429,43 @@ html, body {
       }
     }
 
-    /* Ajustes SOLO desktop */
-   @media (min-width: 1024px) {
-  .slogan {
-    margin-top: 7rem; /* bajalo más, probá entre 5rem y 7rem */
+  /* Solo desktop */
+@media (min-width: 1024px) {
+  /* Escala logo */
+  .logo-desktop {
+    width: 20rem; /* antes lg:w-40 (~5rem), ahora el doble */
+    -mt: -36px; /* opcional si quieres ajustar */
   }
 
-  .boton-hero {
-    margin-top: 2.5rem; /* separalo un poco más del slogan */
+  /* Escala textos principales */
+  .text-desktop {
+    font-size: 4rem; /* NTONUCCI */
+    line-height: 1; 
+  }
+
+  .text-sub-desktop {
+    font-size: 1.8rem; /* Hnos. y AUTOS */
+  }
+
+  /* Ajusta el margen negativo del texto para que no se descuadre */
+  .ntonucci-block {
+    -ml: -20px; /* duplica el -ml-10 que tenías */
+  }
+
+  /* Slogan más grande */
+  .slogan {
+    font-size: 1.2rem; /* antes md:text-xl */
+    margin-top: 3rem; /* ajusta separación */
+  }
+
+  /* Botón más grande */
+  .boton-hero a.btn-primary {
+    padding: 0.2 rem 1rem; /* aumenta el tamaño */
+    font-size: 1 rem;
   }
 }
+
+
     
   </style>
 
@@ -444,20 +473,20 @@ html, body {
     <!-- Imagen A -->
     <img src="AP.png"
          alt="Letra A metálica Antonucci"
-         class="w-28 sm:w-32 md:w-36 lg:w-40 object-contain animate-fade-in -mt-[18px]" />
+         class="w-28 sm:w-32 md:w-36 lg:w-40 object-contain animate-fade-in -mt-[18px] logo-desktop" />
 
     <!-- Texto -->
-    <div class="flex flex-col leading-tight animate-blur-in -ml-6 sm:-ml-8 md:-ml-10 ntonucci-block">
+    <div class="flex flex-col leading-tight animate-blur-in -ml-12 sm:-ml-14 md:-ml-16 ntonucci-block">
       <div class="flex items-baseline">
-        <h1 class="orbitron metal-text text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+        <h1 class="orbitron metal-text text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-desktop">
           NTONUCCI
         </h1>
-        <span class="orbitron metal-sub text-[12px] sm:text-xs md:text-sm font-semibold ml-1">
+        <span class="orbitron metal-sub text-[12px] sm:text-xs md:text-sm font-semibold ml-1 text-sub-desktop">
           Hnos.
         </span>
       </div>
       <div class="flex justify-end">
-  <span class="orbitron metal-sub text-[14px] sm:text-sm md:text-base font-semibold">
+  <span class="orbitron metal-sub text-[14px] sm:text-sm md:text-base font-semibold text-sub-desktop">
         AUTOS
       </span>
       </div>
@@ -607,6 +636,7 @@ body.loaded .animate-blur-in-up {
 <!-- Inventory Section -->
 <section id="inventory" class="py-24 bg-black">
   <div class="container mx-auto px-6">
+    
     <!-- Title -->
     <h2 class="text-4xl font-oswald font-bold text-white text-center mb-6 tracking-wide" data-aos="fade-up">
       AUTOS DESTACADOS
@@ -615,8 +645,65 @@ body.loaded .animate-blur-in-up {
       Descubre nuestra selección de vehículos disponibles en este momento.
     </p>
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- 🚀 Mobile Slider -->
+    <div class="block lg:hidden">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          
+          <!-- Car 1 -->
+          <div class="swiper-slide">
+            <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg card-hover">
+              <div class="relative h-64 overflow-hidden">
+                <img src="amarok.jpg" alt="Amarok" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                  <h3 class="font-montserrat font-bold text-white text-lg">Volkswagen Amarok V6 Extreme</h3>
+                  <p class="text-sm text-gray-300">2025 • 0 km</p>
+                </div>
+              </div>
+              <div class="p-6">
+                <a href="amarok.html" class="btn-secondary w-full text-center block">Ver detalles</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Car 2 -->
+          <div class="swiper-slide">
+            <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg card-hover">
+              <div class="relative h-64 overflow-hidden">
+                <img src="jeepinventory.jpg" alt="Compass" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                  <h3 class="font-montserrat font-bold text-white text-lg">Jeep Compass Limited</h3>
+                  <p class="text-sm text-gray-300">2021 • 20,000 km</p>
+                </div>
+              </div>
+              <div class="p-6">
+                <a href="compass.html" class="btn-secondary w-full text-center block">Ver detalles</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Car 3 -->
+          <div class="swiper-slide">
+            <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg card-hover">
+              <div class="relative h-64 overflow-hidden">
+                <img src="fordraptor.jpg" alt="Raptor" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+                  <h3 class="font-montserrat font-bold text-white text-lg">Ford Ranger Raptor</h3>
+                  <p class="text-sm text-gray-300">2022 • 29,000 km</p>
+                </div>
+              </div>
+              <div class="p-6">
+                <a href="raptor.html" class="btn-secondary w-full text-center block">Ver detalles</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 💻 Desktop Grid -->
+    <div class="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       <!-- Car 1 -->
       <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="100">
         <div class="relative h-64 overflow-hidden">
@@ -631,20 +718,19 @@ body.loaded .animate-blur-in-up {
         </div>
       </div>
 
-<!-- Car 2 -->
-<div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="200">
-  <div class="relative h-64 overflow-hidden">
-    <img src="jeepinventory.jpg" alt="Jeep Compass Limited 2021" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
-      <h3 class="font-montserrat font-bold text-white text-lg">Jeep Compass Limited 4x4</h3>
-      <p class="text-sm text-gray-300">2021 • 20,000 km</p>
-    </div>
-  </div>
-  <div class="p-6">
-    <a href="compass.html" class="btn-secondary w-full text-center block">Ver detalles</a>
-  </div>
-</div>
-
+      <!-- Car 2 -->
+      <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative h-64 overflow-hidden">
+          <img src="jeepinventory.jpg" alt="Jeep Compass Limited 2021" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-5">
+            <h3 class="font-montserrat font-bold text-white text-lg">Jeep Compass Limited 4x4</h3>
+            <p class="text-sm text-gray-300">2021 • 20,000 km</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <a href="compass.html" class="btn-secondary w-full text-center block">Ver detalles</a>
+        </div>
+      </div>
 
       <!-- Car 3 -->
       <div class="bg-[#0a0a0a] rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="300">
@@ -665,9 +751,9 @@ body.loaded .animate-blur-in-up {
     <div class="text-center mt-20" data-aos="fade-up" data-aos-delay="400">
       <a href="inventory.html" class="btn-primary inline-block px-8 py-3">Ver inventario completo</a>
     </div>
+
   </div>
 </section>
-
 
 
 <!-- Script para dots -->
@@ -1291,10 +1377,10 @@ body.loaded .animate-blur-in-up {
   });
 
 </script>
-<!-- Botón flotante Mercado Libre -->
+<!-- Botón flotante Mercado Libre (solo desktop) -->
 <a href="https://vehiculos.mercadolibre.com.ar/_CustId_795977040" 
    target="_blank"
-   class="fixed left-5 bottom-6 z-50 group">
+   class="fixed left-5 bottom-6 z-50 group hidden md:block">
    <div class="bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-xl hover:shadow-yellow-400/50 transition-all duration-300 w-14 h-14 rounded-full flex items-center justify-center relative overflow-hidden">
       <img src="mercadolibre.png" 
            alt="Mercado Libre" class="w-8 h-8 drop-shadow-md">
@@ -1304,5 +1390,56 @@ body.loaded .animate-blur-in-up {
       Ver catálogo ML
    </span>
 </a>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.2,          // cuántos slides se ven a la vez
+    spaceBetween: 20,            // espacio entre cards
+    centeredSlides: true,        // centra el slide activo
+    loop: true,                  // loop infinito
+    on: {
+      init: function () {
+        setActiveSlide(this);
+      },
+      slideChangeTransitionEnd: function () {
+        setActiveSlide(this);
+      }
+    }
+  });
+
+  // función para resaltar el slide activo
+  function setActiveSlide(swiperInstance) {
+    swiperInstance.slides.forEach(slide => {
+      slide.classList.remove("scale-105", "opacity-100");
+      slide.classList.add("scale-90", "opacity-60");
+    });
+
+    let active = swiperInstance.slides[swiperInstance.activeIndex];
+    if (active) {
+      active.classList.add("scale-105", "opacity-100");
+      active.classList.remove("scale-90", "opacity-60");
+    }
+  }
+</script>
+<style>
+ .swiper-slide {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: scale(0.85);   /* más chico por defecto */
+  opacity: 0.5;
+}
+
+.swiper-slide-active {
+  transform: scale(1);      /* slide activo más grande */
+  opacity: 1;
+}
+
+.swiper-slide-next,
+.swiper-slide-prev {
+  transform: scale(0.9);    /* los de los costados un poco más grandes que el resto */
+  opacity: 0.8;
+}
+</style>
+
 </body>
 </html>

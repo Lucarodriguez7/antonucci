@@ -14,6 +14,9 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
    
     <style>
+      html, body {
+  overflow-x: hidden;
+}
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #000000;
@@ -96,6 +99,7 @@
       <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
       <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
      <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+     
 
         </nav>
 
@@ -135,6 +139,13 @@
       <a href="inventory.html" class="text-lg hover:text-gray-400">Inventario</a>
       <a href="about.html" class="text-lg hover:text-gray-400">Sobre Nosotros</a>
       <a href="consignacion.html" class="btn-primary px-6 py-2">Quiero vender mi auto</a>
+        <a href="https://vehiculos.mercadolibre.com.ar/_CustId_795977040" 
+   target="_blank" 
+   class="btn-ml px-6 py-">
+   <img src="mercadolibre.png" 
+        alt="Mercado Libre" class="w-5 h-5">
+   <span>Mercado Libre</span>
+</a>
     </nav>
   </div>
 
@@ -389,7 +400,53 @@
   </span>
   <span class="wa-text">WhatsApp</span>
 </button>
+ <style>
+  .btn-ml {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 28px;
+    border: 2px solid #ffdb15; /* amarillo ML */
+    background: transparent;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.3s ease, border 0.3s ease;
+  }
 
+  /* Fondo animado */
+  .btn-ml::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+    background: #ffdb15; /* amarillo ML */
+    z-index: 0;
+    transition: width 0.4s ease;
+  }
+
+  /* Cuando hace hover se llena */
+  .btn-ml:hover::before {
+    width: 100%;
+  }
+
+  /* El contenido siempre por encima */
+  .btn-ml span, 
+  .btn-ml img {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Texto cambia a negro cuando se llena */
+  .btn-ml:hover span {
+    color: #000;
+  }
+</style>
 <style>
   .wa-btn {
     position: fixed;
@@ -663,6 +720,19 @@
     lastScroll = currentScroll;
   });
 </script>
+<!-- Botón flotante Mercado Libre (solo desktop) -->
+<a href="https://vehiculos.mercadolibre.com.ar/_CustId_795977040" 
+   target="_blank"
+   class="fixed left-5 bottom-6 z-50 group hidden md:block">
+   <div class="bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-xl hover:shadow-yellow-400/50 transition-all duration-300 w-14 h-14 rounded-full flex items-center justify-center relative overflow-hidden">
+      <img src="mercadolibre.png" 
+           alt="Mercado Libre" class="w-8 h-8 drop-shadow-md">
+   </div>
+   <!-- Tooltip -->
+   <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs font-semibold px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap">
+      Ver catálogo ML
+   </span>
+</a>
 
 </body>
 </html>

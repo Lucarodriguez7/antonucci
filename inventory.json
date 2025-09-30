@@ -41,7 +41,7 @@
   "year": 2025,
   "km": "0 km",
   "brand": "Volkswagen",
-  "image": "pologrid.jpeg",
+  "image": "pologrid.png",
   "price": null,
   "badge": null,
   "tags": ["Sedán", "Automático"],
@@ -108,10 +108,10 @@
 }
 ,
   {
-    "title": "BMW X6",
-    "year": 2021,
-    "km": "20,000 km",
-    "brand": "BMW",
+    "title": "",
+    "year": 2019 ,
+    "km": "48,000 km",
+    "brand": "Volkswagen",
     "image": "https://via.placeholder.com/400x250?text=BMW+X6",
     "price": "$80,000",
     "badge": "Premium",

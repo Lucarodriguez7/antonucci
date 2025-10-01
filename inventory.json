@@ -108,37 +108,37 @@
 }
 ,
   {
-    "title": "",
-    "year": 2019 ,
-    "km": "48,000 km",
+    "title": "Volkswagen T-Cross Comfortline Pack",
+    "year": 2025 ,
+    "km": "0 km",
     "brand": "Volkswagen",
-    "image": "https://via.placeholder.com/400x250?text=BMW+X6",
-    "price": "$80,000",
-    "badge": "Premium",
-    "tags": ["SUV", "Automático"],
-    "link": "#"
+    "image": "tcrossconfort.png",
+    "price": null,
+    "badge": null,
+    "tags": ["SUV", "Automático", "1.0 TSI"],
+    "link": "tcrossc.html"
   },
   {
-    "title": "Audi A4",
+    "title": "Fiat Strada 1.4 Working Cd",
     "year": 2020,
-    "km": "35,000 km",
-    "brand": "Audi",
-    "image": "https://via.placeholder.com/400x250?text=Audi+A4",
-    "price": "$50,000",
-    "badge": "Oferta",
-    "tags": ["Sedán", "Manual"],
-    "link": "#"
+    "km": "89,000 km",
+    "brand": "Fiat",
+    "image": "fstrada.png",
+    "price": null,
+    "badge": null,
+    "tags": ["Pickup", "Doble Cabina", "Manual"],
+    "link": "strada.html"
   },
   {
-    "title": "Mercedes GLE",
-    "year": 2022,
-    "km": "10,000 km",
-    "brand": "Mercedes-Benz",
-    "image": "https://via.placeholder.com/400x250?text=Mercedes+GLE",
-    "price": "$95,000",
+    "title": "Ford Territory 1.8 Ecobost Titanium At",
+    "year": 2023,
+    "km": "16,000 km",
+    "brand": "Ford",
+    "image": "ftt.png",
+    "price": null,
     "badge": "",
     "tags": ["SUV", "Automático"],
-    "link": "#"
+    "link": "fordterritory.html"
   },
    {
     "title": "Volkswagen Amarok V6 Extreme 258HP",
@@ -175,48 +175,48 @@
   }
   ,
   {
-    "title": "BMW X6",
-    "year": 2021,
-    "km": "20,000 km",
-    "brand": "BMW",
-    "image": "https://via.placeholder.com/400x250?text=BMW+X6",
-    "price": "$80,000",
-    "badge": "Premium",
-    "tags": ["SUV", "Automático"],
-    "link": "#"
-  },
-  {
-    "title": "Audi A4",
+    "title": "Ford Ranger Raptor 2.0l Biturbo Cabina Doble 4x4",
     "year": 2020,
-    "km": "35,000 km",
-    "brand": "Audi",
-    "image": "https://via.placeholder.com/400x250?text=Audi+A4",
-    "price": "$50,000",
-    "badge": "Oferta",
-    "tags": ["Sedán", "Manual"],
-    "link": "#"
+    "km": "67,500 km",
+    "brand": "Ford",
+    "image": "raptor.jpg",
+    "price": null,
+    "badge": null,
+    "tags": ["SUV", "Automático"],
+    "link": "raptor2020.html"
   },
   {
-    "title": "Mercedes GLE",
+    "title": "Citroën Jumpy 1.6 L3 Hdi 115 Business Mixto",
     "year": 2022,
-    "km": "10,000 km",
-    "brand": "Mercedes-Benz",
-    "image": "https://via.placeholder.com/400x250?text=Mercedes+GLE",
-    "price": "$95,000",
-    "badge": "",
-    "tags": ["SUV", "Automático"],
-    "link": "#"
+    "km": "32,000 km",
+    "brand": "Citroen",
+    "image": "jumpy.png",
+    "price": null,
+    "badge": null,
+   "tags": ["Furgón", "Diésel", "Manual", "Mixto", "Utilitario"],
+    "link": "jumpy.html"
   },
   {
-    "title": "BMW X6",
+    "title": "Toyota Hilux Pick-Up 2.8 Cd Srv 177cv 4x4",
     "year": 2021,
-    "km": "20,000 km",
-    "brand": "BMW",
-    "image": "https://via.placeholder.com/400x250?text=BMW+X6",
-    "price": "$80,000",
-    "badge": "Premium",
+    "km": "63,000 km",
+    "brand": "Toyota",
+    "image": "hilux.jpeg",
+    "price": null,
+    "badge": null,
+    "tags": ["Pick-Up", "4x4", "Diésel"],
+    "link": "hilux.html"
+  },
+  {
+    "title": "Honda HR-V 1.8 Ex-l 2wd Cvt",
+    "year": 2017,
+    "km": "90,000 km",
+    "brand": "Honda",
+    "image": "hrv.jpg",
+    "price": null,
+    "badge": null,
     "tags": ["SUV", "Automático"],
-    "link": "#"
+    "link": "hondahrv.html"
   },
   {
     "title": "Audi A4",

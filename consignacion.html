@@ -498,7 +498,7 @@
   document.getElementById("whatsapp-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const phoneNumber = "5492235442198"; // 📌 tu número de WhatsApp
+    const phoneNumber = "5492235442198"; // ✅ número en formato internacional limpio
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -508,14 +508,17 @@
     const carYear = document.getElementById("car-year").value;
     const message = document.getElementById("message").value;
 
-    const text = `Hola, quiero consignar mi auto.%0A
-👤 Nombre: ${name}%0A
-📧 Email: ${email}%0A
-📱 Teléfono: ${phone}%0A
-🚗 Marca: ${carMake}%0A
-🚙 Modelo: ${carModel}%0A
-📅 Año: ${carYear}%0A
-📝 Comentarios: ${message}`;
+    // Armamos el texto con encodeURIComponent para evitar errores de caracteres
+    const text = encodeURIComponent(
+`Hola, quiero consignar mi auto.
+👤 Nombre: ${name}
+📧 Email: ${email}
+📱 Teléfono: ${phone}
+🚗 Marca: ${carMake}
+🚙 Modelo: ${carModel}
+📅 Año: ${carYear}
+📝 Comentarios: ${message}`
+    );
 
     const url = `https://wa.me/${phoneNumber}?text=${text}`;
     window.open(url, "_blank");

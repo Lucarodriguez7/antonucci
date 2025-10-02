@@ -947,6 +947,108 @@ body.loaded .animate-blur-in-up {
 </a>
   </div>
 </section>
+<!-- Reseñas / Testimonios -->
+<section id="reviews" class="py-24 bg-black text-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-center text-3xl md:text-4xl font-bold mb-12" data-aos="fade-up">
+      Opiniones de Nuestros Clientes
+    </h2>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide bg-neutral-900/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/10">
+          <p class="text-lg italic">“Me atendieron muy bien. Impecable!”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/60?img=1" class="w-12 h-12 rounded-full border border-gray-600" alt="user">
+            <div>
+              <h4 class="font-bold">Mabel Martinez</h4>
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide bg-neutral-900/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/10">
+          <p class="text-lg italic">“Los mejores autos nuevos y usados. Atendido por sus dueños.”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/60?img=2" class="w-12 h-12 rounded-full border border-gray-600" alt="user">
+            <div>
+              <h4 class="font-bold">Julieta Golfieri</h4>
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide bg-neutral-900/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/10">
+          <p class="text-lg italic">“Excelente atención de Alejandro.”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/60?img=3" class="w-12 h-12 rounded-full border border-gray-600" alt="user">
+            <div>
+              <h4 class="font-bold">Juan Martín Paterlini</h4>
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide bg-neutral-900/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/10">
+          <p class="text-lg italic">“Excelentes unidades, honestidad, grata atención.”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/60?img=4" class="w-12 h-12 rounded-full border border-gray-600" alt="user">
+            <div>
+              <h4 class="font-bold">Marcos A. Brassesco</h4>
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Paginación y navegación -->
+      <div class="swiper-pagination"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Swiper.js CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 4000, // Velocidad lenta y premium
+      disableOnInteraction: false,
+    },
+    speed: 1000, // transición suave
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    // Ajuste de velocidad cuando swipeas
+    on: {
+      touchStart: function () {
+        this.params.autoplay.delay = 1500; // más rápido
+      },
+      touchEnd: function () {
+        this.params.autoplay.delay = 4000; // vuelve lento
+      }
+    }
+  });
+</script>
+
 <!-- Section Financiamiento -->
 <section class="relative py-20 bg-black text-white">
   <div class="container mx-auto px-6 text-center">
@@ -1393,21 +1495,7 @@ body.loaded .animate-blur-in-up {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1.2,          // cuántos slides se ven a la vez
-    spaceBetween: 20,            // espacio entre cards
-    centeredSlides: true,        // centra el slide activo
-    loop: true,                  // loop infinito
-    on: {
-      init: function () {
-        setActiveSlide(this);
-      },
-      slideChangeTransitionEnd: function () {
-        setActiveSlide(this);
-      }
-    }
-  });
-
+  
   // función para resaltar el slide activo
   function setActiveSlide(swiperInstance) {
     swiperInstance.slides.forEach(slide => {

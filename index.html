@@ -13,17 +13,47 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <script>
-  if (localStorage.getItem("preloaderShown")) {
-    document.documentElement.classList.add("no-preloader");
-  }
-</script>
+
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 </style>
- 
+   <style>
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999999;
+      transition: opacity 0.8s ease;
+    }
+
+    .no-preloader #preloader {
+      display: none !important;
+    }
+
+    /* Bloquea el scroll hasta que cargue */
+    body {
+      overflow: hidden;
+    }
+    body.loaded {
+      overflow: auto;
+    }
+  </style>
+
+  <!-- este script corre ANTES de que cargue nada -->
+  <script>
+    if (sessionStorage.getItem("preloaderShown")) {
+      document.documentElement.classList.add("no-preloader");
+    }
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
         tailwind.config = {
@@ -235,50 +265,36 @@ html, body {
                 transform: none !important;
             }
         }
-        .no-preloader #preloader {
-  display: none !important;
-}
+
 
     </style>
 </head>
 <body class="antialiased">
- <!-- Preloader -->
-<div id="preloader">
-  <div class="logo-wrapper">
-    <img src="AP.png" alt="Logo Antonucci" class="logo" />
-    <div class="shine"></div>
+ <div id="preloader">
+    <div class="logo-wrapper">
+      <img src="AP.png" alt="Logo Antonucci" class="logo" />
+      <div class="shine"></div>
+    </div>
   </div>
-</div>
+
 
 <style>
-  /* Preloader */
-  #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-  }
 
-  .logo-wrapper {
-    position: relative;
-    display: inline-block;
-    animation: zoomFadeIn 1.2s ease forwards;
-  }
 
-  .logo {
-    width: 160px;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 0 25px rgba(255,255,255,0.3));
-  }
+ .logo-wrapper {
+  position: relative;
+  display: inline-block;
+  animation: zoomFadeIn 1.2s ease forwards;
+}
 
-  /* Shine efecto adaptado a la forma PNG */
+.logo {
+  width: 160px; /* tamaño original */
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 15px rgba(15, 15, 15, 0.2)); /* brillo más sutil */
+}
+
+/* Shine efecto sobre PNG */
 .shine {
   position: absolute;
   top: 0;
@@ -288,7 +304,7 @@ html, body {
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 48%,
-    rgba(255, 255, 255, 0.2) 50%,  /* línea fina y suave */
+    rgba(255, 255, 255, 0.12) 50%,  /* brillo más tenue */
     rgba(255, 255, 255, 0) 52%
   );
   background-size: 200% 100%;
@@ -298,17 +314,29 @@ html, body {
   -webkit-mask-size: contain;
   animation: shineAnim 3s ease-in-out forwards;
 }
-  /* Entrada dinámica */
-  @keyframes zoomFadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+
+/* Entrada dinámica */
+@keyframes zoomFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
   }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Shine animación */
+@keyframes shineAnim {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 
   /* Shine pasando */
   @keyframes shineAnim {
@@ -1340,6 +1368,26 @@ body.loaded .animate-blur-in-up {
   </div>
 </footer>
 
+  <script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+
+      if (!sessionStorage.getItem("preloaderShown")) {
+        setTimeout(() => {
+          preloader.style.opacity = "0";
+          setTimeout(() => {
+            preloader.style.display = "none";
+            document.body.classList.add("loaded");
+          }, 800);
+        }, 3200);
+
+        sessionStorage.setItem("preloaderShown", "true");
+      } else {
+        document.body.classList.add("loaded");
+      }
+    });
+  </script>
+
 
     <script>
         // Initialize AOS
@@ -1457,28 +1505,7 @@ body.loaded .animate-blur-in-up {
     });
   })();
 </script>
-<script>
 
- window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
-
-    if (!localStorage.getItem("preloaderShown")) {
-      setTimeout(() => {
-        preloader.style.opacity = "0";
-        preloader.style.transition = "opacity 0.8s ease";
-        setTimeout(() => {
-          preloader.style.display = "none";
-          document.body.classList.add("loaded");
-        }, 800);
-      }, 3000); // duración del preloader
-
-      localStorage.setItem("preloaderShown", "true");
-    } else {
-      document.body.classList.add("loaded");
-    }
-  });
-
-</script>
 <!-- Botón flotante Mercado Libre (solo desktop) -->
 <a href="https://vehiculos.mercadolibre.com.ar/_CustId_795977040" 
    target="_blank"

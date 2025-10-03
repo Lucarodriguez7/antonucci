@@ -127,7 +127,40 @@
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
+.pagination-active {
+  border: 2px solid #ff0000 !important;
+  box-shadow: 0 0 12px #ff0000;
+}
+.pagination-active {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  background-clip: padding-box;
+  z-index: 1;
+}
 
+.pagination-active::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* grosor del borde */
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(90deg, #ff0000, #ff4d4d, #ff0000);
+  background-size: 300% 300%;
+  animation: border-flow 3s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 </style>
   <!-- Mobile Sidebar -->
   <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-black text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
@@ -174,83 +207,112 @@
         />
       </div>
 
-    <!-- Filtro: Marcas (nuevo, reemplaza los botones) -->
+   <!-- BLOQUE MARCAS (REEMPLAZAR) -->
 <div class="flex flex-col relative z-20">
   <label class="mb-2 text-sm font-semibold tracking-wide text-gray-400">Marca</label>
   <div class="bg-neutral-900 rounded-xl border border-gray-700 overflow-hidden">
     <button 
-  class="w-full flex items-center justify-between px-4 py-3 hover:bg-neutral-800 transition group focus:outline-none focus:ring-0"
-  onclick="toggleMarcas()"
->
-  <span class="font-medium">Seleccionar marca</span>
-  <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-200 transition transform duration-300" id="arrow-marcas"
-       fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-</button>
-    
-    <!-- Lista con animación -->
-    <div id="marcas-list" 
-         class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out divide-y divide-gray-800 absolute w-full bg-neutral-900 border border-gray-700 rounded-xl mt-1 shadow-xl">
+      class="w-full flex items-center justify-between px-4 py-3 hover:bg-neutral-800 transition group focus:outline-none focus:ring-0"
+      onclick="toggleMarcas()"
+    >
+      <span class="font-medium">Seleccionar marca</span>
+      <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-200 transition transform duration-300" id="arrow-marcas"
+           fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+
+   <div id="marcas-list" 
+     class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out 
+            divide-y divide-gray-800 absolute w-full bg-neutral-900 
+            border border-gray-700 rounded-xl mt-1 shadow-xl 
+            overflow-y-auto">
       <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Volkswagen">
         <img src="volkswagen-10-logo-png-transparent.png" alt="Volkswagen" class="h-6">
         <span class="text-sm">Volkswagen</span>
       </label>
+
       <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Renault">
         <img src="renault.png" alt="Renault" class="h-6">
         <span class="text-sm">Renault</span>
       </label>
+
       <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Toyota">
         <img src="toyota.png" alt="Toyota" class="h-6">
         <span class="text-sm">Toyota</span>
       </label>
-      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Peugeot">
         <img src="peugeot.png" alt="Peugeot" class="h-6">
         <span class="text-sm">Peugeot</span>
       </label>
-      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Mercedes">
         <img src="mblogo.png" alt="Mercedes" class="h-6">
         <span class="text-sm">Mercedes-Benz</span>
       </label>
-      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+      
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="BMW">
         <img src="bmw.png" alt="BMW" class="h-6">
         <span class="text-sm">BMW</span>
       </label>
-      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+         
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Audi">
         <img src="audi.png" alt="Audi" class="h-6">
         <span class="text-sm">Audi</span>
       </label>
-      <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
-        <input type="checkbox" class="accent-gray-500 w-4 h-4">
+            
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Jeep">
         <img src="jeep.png" alt="Jeep" class="h-6">
         <span class="text-sm">Jeep</span>
       </label>
-      <!-- más marcas -->
+                 
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Citroen">
+        <img src="citroen.png" alt="Citroen" class="h-6">
+        <span class="text-sm">Citroen</span>
+      </label>
+                 
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Ford">
+        <img src="ford.png" alt="Ford" class="h-6">
+        <span class="text-sm">Ford</span>
+      </label>
+                 
+        <label class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-neutral-800">
+        <input type="checkbox" class="brand-checkbox accent-gray-500 w-4 h-4" data-brand="Honda">
+        <img src="honda.png" alt="Honda" class="h-6">
+        <span class="text-sm">Honda</span>
+      </label>
     </div>
   </div>
 </div>
 
 <script>
-  function toggleMarcas() {
-    const list = document.getElementById('marcas-list');
-    const arrow = document.getElementById('arrow-marcas');
-    if (list.classList.contains('max-h-0')) {
-      list.classList.remove('max-h-0');
-      list.classList.add('max-h-96'); // altura máxima del menú desplegable
-      arrow.classList.add('rotate-180'); // rota la flechita
-    } else {
-      list.classList.add('max-h-0');
-      list.classList.remove('max-h-96');
-      arrow.classList.remove('rotate-180');
-    }
+function toggleMarcas(forceClose = false) {
+  const list = document.getElementById('marcas-list');
+  const arrow = document.getElementById('arrow-marcas');
+
+  if (forceClose || list.classList.contains('max-h-80')) {
+    list.classList.add('max-h-0');
+    list.classList.remove('max-h-80');
+    arrow.classList.remove('rotate-180');
+  } else {
+    list.classList.remove('max-h-0');
+    list.classList.add('max-h-80'); // altura máxima fija con scroll interno
+    arrow.classList.add('rotate-180');
   }
+}
+
+
 </script>
 
 <!-- Rango de kilometraje -->
@@ -587,23 +649,32 @@
   }
 
   function renderPagination(totalCars) {
-    const container = document.querySelector("#pagination");
-    container.innerHTML = "";
+  const container = document.querySelector("#pagination");
+  container.innerHTML = "";
 
-    const totalPages = Math.ceil(totalCars / carsPerPage);
+  const totalPages = Math.ceil(totalCars / carsPerPage);
 
-    for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement("button");
-      btn.textContent = i;
-      btn.className = `px-4 py-2 border border-gray-700 rounded-lg ${i === currentPage ? "bg-secondary" : "hover:bg-secondary"}`;
-      btn.addEventListener("click", () => {
-        currentPage = i;
-        applyFilters();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-      container.appendChild(btn);
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+
+    btn.className = `px-4 py-2 border border-gray-700 rounded-lg transition`;
+
+    if (i === currentPage) {
+      btn.classList.add("pagination-active");
+    } else {
+      btn.classList.add("hover:bg-secondary");
     }
+
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      applyFilters();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    container.appendChild(btn);
   }
+}
 
   function applyFilters() {
     const searchInput = document.querySelector('input[placeholder^="Ej:"]').value.toLowerCase();
